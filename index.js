@@ -78,3 +78,22 @@ document.addEventListener("keydown", (e) => {
 		first.focus();
 	}
 });
+
+const cards = document.querySelectorAll(".policy-card");
+const observer = new IntersectionObserver(
+	(entries) => {
+		entries.forEach((entry) => {
+			if (entry.isIntersecting) {
+				cards.forEach((card, index) => {
+					setTimeout(() => {
+						card.classList.add("is-visible");
+					}, index * 250);
+				});
+				observer.disconnect();
+			}
+		});
+	},
+	{ threshold: 0.3 }
+	);
+
+observer.observe(document.querySelector("#fightin-for"));

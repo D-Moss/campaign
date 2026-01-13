@@ -543,17 +543,390 @@ body.menu-open .mobile-menu {
 	display: inline-block;
 }
 
-/* Responsive */
+/*DONATION*/
+.donate-section {
+  background: #0b2a4a;
+  padding: 4.5rem 1rem;
+  color: #ffffff;
+}
+
+.donate-inner {
+  width: min(1100px, 90%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.donate-title {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  margin-bottom: 1rem;
+}
+
+.donate-desc {
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.7;
+  max-width: 55ch;
+  margin-bottom: 1.75rem;
+}
+
+.donate-actions {
+  display: flex;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.donate-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.95rem 1.2rem;
+  border-radius: 10px;
+  font-weight: 800;
+  text-decoration: none;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.donate-btn.primary {
+  background: #ffffff;
+  color: #0b2a4a;
+  border-color: #f5c542;
+}
+
+.donate-btn.ghost {
+  background: transparent;
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.donate-btn.full {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.donate-fineprint {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.donate-panel {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 18px;
+  padding: 1.5rem;
+}
+
+.donate-panel-title {
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  margin-bottom: 1rem;
+}
+
+.donate-amounts {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.amount-btn {
+  padding: 0.9rem 1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.04);
+  color: #ffffff;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.amount-btn:hover {
+  border-color: rgba(245, 197, 66, 0.65);
+}
+
+.donate-custom {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 1rem;
+  padding: 0.85rem 1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.donate-custom-label {
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.donate-custom-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+.donate-custom-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.donate-panel-note {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 0.75rem;
+}
+
+/*VOLUNTEER*/
+/* Gold line to separate Donate + Volunteer (same navy background) */
+.volunteer-section {
+  background: #0b2a4a;
+  padding: 4.5rem 1rem;
+  border-top: 3px solid #f5c542; /* gold divider */
+  color: #ffffff;
+}
+
+.volunteer-inner {
+  width: min(1100px, 90%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.volunteer-title {
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  margin-bottom: 0.75rem;
+}
+
+.volunteer-desc {
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.7;
+  max-width: 60ch;
+  margin-bottom: 1.5rem;
+}
+
+.volunteer-actions {
+  display: flex;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.volunteer-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.95rem 1.2rem;
+  border-radius: 10px;
+  font-weight: 800;
+  text-decoration: none;
+  border: 2px solid transparent;
+}
+
+.volunteer-btn.primary {
+  background: #ffffff;
+  color: #0b2a4a;
+  border-color: #f5c542;
+}
+
+.volunteer-btn.ghost {
+  background: transparent;
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.volunteer-fineprint {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 0.5rem;
+}
+
+/* Right-side “ways to help” cards */
+.volunteer-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.85rem;
+}
+
+.help-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 16px;
+  padding: 1.2rem;
+}
+
+.help-card h3 {
+  margin-bottom: 0.35rem;
+  font-size: 1.05rem;
+  color: #ffffff;
+}
+
+.help-card p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.55;
+  font-size: 0.95rem;
+}
+
+/*FOOTER*/
+.site-footer {
+  background: #ffffff;
+  color: #0b2a4a;
+  /*border-top: 3px solid #f5c542; /* gold separator */
+  padding: 3.5rem 1rem 1.5rem;
+}
+
+.footer-inner {
+  width: min(1100px, 90%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.footer-name {
+	color: #0b2a4a;
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin: 0 0 0.25rem;
+}
+
+.footer-slogan {
+  margin: 0 0 1.25rem;
+  color: rgba(11, 42, 74, 0.8);
+  letter-spacing: 0.02em;
+}
+
+.footer-donate {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 1.1rem;
+  border-radius: 10px;
+  background: #0b2a4a;
+  color: #ffffff;
+  font-weight: 800;
+  text-decoration: none;
+  border: 2px solid #f5c542;
+}
+
+.footer-heading {
+  font-size: 0.95rem;
+  font-weight: 800;
+  margin: 0 0 0.85rem;
+  color: rgba(11, 42, 74, 0.9);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.footer-links a,
+.footer-contact a,
+.footer-social a,
+.footer-legal a {
+  display: inline-block;
+  color: rgba(11, 42, 74, 0.80);
+  text-decoration: none;
+  margin-bottom: 0.6rem;
+}
+
+.footer-links a:hover,
+.footer-contact a:hover,
+.footer-social a:hover,
+.footer-legal a:hover {
+  color: #0b2a4a;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.footer-social {
+  margin-top: 0.75rem;
+  display: flex;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+}
+
+.footer-bottom {
+  width: min(1100px, 90%);
+  margin: 2rem auto 0;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(11, 42, 74, 0.15);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-paidfor,
+.footer-legal {
+  margin: 0;
+  font-size: 0.8rem;
+  color: rgba(11, 42, 74, 0.7);
+}
+
+.footer-privacy {
+  color: rgba(11, 42, 74, 0.85);
+}
+
+/* Mobile */
 @media (max-width: 900px) {
-  .fightin-for-cards {
-    grid-template-columns: 1fr 1fr;
+  .footer-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-social {
+    justify-content: center;
+  }
+
+  .footer-bottom {
+    justify-content: center;
+    text-align: center;
   }
 }
 
-@media (max-width: 520px) {
-  .fightin-for-cards {
+@media (max-width: 900px) {
+  .volunteer-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .volunteer-actions {
+    justify-content: center;
+  }
+
+  .volunteer-cards {
     grid-template-columns: 1fr;
   }
+}
+
+@media (max-width: 900px) {
+  .donate-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .donate-actions {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 900px) {
+	.fightin-for-cards {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+@media (max-width: 520px) {
+	.fightin-for-cards {
+		grid-template-columns: 1fr;
+	}
 }
 
 /* RESPONSIVE: hide desktop links + donate, show toggle */

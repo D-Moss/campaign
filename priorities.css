@@ -184,3 +184,59 @@
 section[id] {
 	scroll-margin-top: var(--header-h);
 }
+
+/* Nested full statement toggle */
+.policy-details{
+  margin-top: 1.1rem;
+  border: 1px solid rgba(11, 42, 74, 0.14);
+  border-radius: 14px;
+  background: rgba(11, 42, 74, 0.02);
+  overflow: hidden;
+}
+
+.policy-summary-toggle{
+  cursor: pointer;
+  list-style: none;
+  padding: .95rem 1rem;
+  font-weight: 900;
+  color: #0b2a4a;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.policy-summary-toggle::-webkit-details-marker{
+  display: none;
+}
+
+.policy-summary-toggle::after{
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-right: 3px solid #0b2a4a;
+  border-bottom: 3px solid #0b2a4a;
+  transform: rotate(45deg);
+  transition: transform 160ms ease;
+  opacity: .85;
+}
+
+.policy-details[open] .policy-summary-toggle::after{
+  transform: rotate(-135deg);
+}
+
+.policy-full{
+  padding: 0 1rem 1rem;
+  color: rgba(11, 42, 74, 0.86);
+  line-height: 1.75;
+}
+
+.policy-bullets{
+  margin: 1rem 0 0;
+  padding-left: 1.1rem;
+}
+
+.policy-bullets li{
+  margin-bottom: .55rem;
+  color: rgba(11, 42, 74, 0.86);
+}

@@ -1,0 +1,186 @@
+.priorities-hero {
+	background: var(--navy);
+	color: var(--white);
+	padding: 4.5rem 1rem 3.25rem;
+	border-bottom: 3px solid rgba(245, 197, 66, 0.65);
+}
+
+.priorities-inner {
+	width: min(1100px, 90%);
+	margin: 0 auto;
+	text-align: center;
+}
+
+.priorities-kicker {
+	display: inline-block;
+	margin: 0 0 .9rem;
+	padding: .35rem .8rem;
+	border: 1px solid rgba(255,255,255,.22);
+	border-radius: 999px;
+	font-size: .85rem;
+	letter-spacing: .10em;
+	text-transform: uppercase;
+	color: rgba(255,255,255,.78);
+}
+
+.priorities-title {
+	margin: 0 0 .9rem;
+	font-size: clamp(2rem, 4vw, 3rem);
+	line-height: 1.1;
+}
+
+.priorities-subtitle {
+	margin: 0 auto;
+	max-width: 65ch;
+	color: rgba(255,255,255,.85);
+	line-height: 1.7;
+	font-size: clamp(1rem, 1.7vw, 1.15rem);
+}
+
+.priorities-jump {
+	margin-top: 1.6rem;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: .65rem;
+}
+
+.jump-btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: .6rem .95rem;
+	border-radius: 999px;
+	border: 1px solid rgba(255,255,255,.25);
+	background: rgba(255,255,255,.06);
+	color: var(--white);
+	font-weight: 800;
+	transition: transform .12s ease, background .12s ease, border-color .12s ease;
+}
+
+.jump-btn:hover {
+	transform: translateY(-1px);
+	background: rgba(255,255,255,.10);
+	border-color: rgba(255,255,255,.35);
+}
+
+.jump-btn:focus {
+	outline: 3px solid rgba(245, 197, 66, 0.75);
+	outline-offset: 3px;
+}
+
+/* Accordion wrap */
+.priorities-wrap {
+	background: #f8f9fb;
+	padding: 3.25rem 1rem 4rem;
+}
+
+.priorities-accordion {
+	width: min(1100px, 90%);
+	margin: 0 auto;
+	display: grid;
+	gap: 1rem;
+}
+
+/* Accordion item */
+.acc-item {
+	background: var(--white);
+	border: 1px solid rgba(11, 42, 74, 0.14);
+	border-radius: 18px;
+	overflow: hidden;
+	box-shadow: 0 10px 26px rgba(0,0,0,.06);
+}
+
+/* Button */
+.acc-btn {
+	width: 100%;
+	text-align: left;
+	padding: 1.25rem 1.25rem;
+	background: var(--white);
+	color: #0b2a4a;
+	font-weight: 900;
+	font-size: 1.1rem;
+	border: 0;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+}
+
+.acc-btn:hover {
+	background: rgba(11, 42, 74, 0.03);
+}
+
+.acc-btn:focus {
+	outline: 3px solid rgba(245,197,66,.75);
+	outline-offset: 3px;
+}
+
+/* Chevron */
+.acc-icon {
+	width: 12px;
+	height: 12px;
+	border-right: 3px solid #0b2a4a;
+	border-bottom: 3px solid #0b2a4a;
+	transform: rotate(45deg);
+	transition: transform 160ms ease;
+	opacity: .85;
+}
+
+.acc-btn[aria-expanded="true"] .acc-icon {
+	transform: rotate(-135deg);
+}
+
+/* Panel */
+.acc-panel {
+	border-top: 3px solid #f5c542; /*Not sure if I want to keep this.maybe remove the border on title*/
+}
+
+.acc-content {
+	padding: 1.25rem 1.25rem 1.35rem;
+	color: rgba(11, 42, 74, 0.86);
+	line-height: 1.75;
+}
+
+.acc-content p {
+	margin: 0 0 1rem;
+}
+
+/* CTA row */
+.acc-cta {
+	margin-top: 1.25rem;
+	display: flex;
+	flex-wrap: wrap;
+	gap: .75rem;
+}
+
+/* Use your existing donate-btn styles if you prefer;
+   these work even if donate-btn isn't on priorities page */
+.donate-btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: .9rem 1.1rem;
+	border-radius: 10px;
+	font-weight: 900;
+	text-decoration: none;
+	border: 2px solid transparent;
+}
+
+.donate-btn.primary {
+	background: #0b2a4a;
+	color: #ffffff;
+	border-color: #f5c542;
+}
+
+.donate-btn.ghost {
+	background: transparent;
+	color: #0b2a4a;
+	border-color: rgba(11,42,74,.28);
+}
+
+/* Prevent sticky header covering anchors */
+section[id] {
+	scroll-margin-top: var(--header-h);
+}

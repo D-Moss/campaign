@@ -53,7 +53,7 @@ img {
 /* HEADER */
 .site-header {
 	background: var(--white);
-	border-bottom: 2px solid var(--navy);
+	/*border-bottom: 2px solid var(--navy);*/
 	position: sticky;
 	top: 0;
 	z-index: 1000;
@@ -418,10 +418,273 @@ body.menu-open .mobile-menu {
 	font-size: 0.7rem;
 }
 
+/*ADDITIONAL SIGN UP*/
+/* Section base */
+.signup-section {
+  background: #ffffff;
+  padding: 5rem 1rem;
+}
+
+/* 50 / 50 layout */
+.signup-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+/* LEFT: FORM */
+.signup-left {
+  max-width: 560px;
+}
+
+.signup-name {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #0b2a4a;
+  margin-bottom: 0.25rem;
+}
+
+.signup-kicker {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(11, 42, 74, 0.75);
+  margin-bottom: 2rem;
+}
+
+/* Larger form */
+.signup-form-large input {
+  padding: 1rem 1.1rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 1px solid rgba(11, 42, 74, 0.25);
+}
+
+.signup-form-large input:focus {
+  outline: 2px solid #f5c542;
+  outline-offset: 2px;
+}
+
+.signup-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.9rem;
+}
+
+.signup-checkbox {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  color: rgba(11, 42, 74, 0.85);
+}
+
+/* Bigger button */
+.signup-btn-large {
+  margin-top: 1.25rem;
+  padding: 1rem;
+  font-size: 1.05rem;
+  font-weight: 800;
+  border-radius: 12px;
+  background: #0b2a4a;
+  color: #ffffff;
+  border: 2px solid #f5c542;
+  cursor: pointer;
+}
+
+/* Disclaimer */
+.signup-disclaimer {
+  margin-top: 1rem;
+  font-size: 0.75rem;
+  color: rgba(11, 42, 74, 0.7);
+}
+
+.privacy-link {
+  color: #0b2a4a;
+  font-weight: 600;
+}
+
+/* RIGHT: LOGO */
+.signup-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup-logo-large {
+  width: 100%;
+  max-width: 480px;   /* THIS controls how big the logo is */
+  height: auto;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .signup-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+
+  .signup-left {
+    margin: 0 auto;
+  }
+
+  .signup-row {
+    grid-template-columns: 1fr;
+  }
+
+  .signup-logo-large {
+    max-width: 300px;
+  }
+}
+
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* White background + proper spacing */
+.signup-section {
+  background: #ffffff !important;
+  padding: 5rem 1rem !important;
+}
+
+/* IMPORTANT: remove the 520px constraint that’s shrinking everything */
+.signup-inner {
+  max-width: var(--max) !important;   /* 1160px from your :root */
+  width: min(var(--max), 90%) !important;
+  margin: 0 auto !important;
+  color: var(--navy) !important;
+  text-align: left !important;
+}
+
+/* 50/50 layout */
+.signup-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 4rem !important;
+  align-items: center !important;
+}
+
+/* Left column should be able to grow */
+.signup-left {
+  max-width: none !important;
+}
+
+/* Bigger headings */
+.signup-name {
+  font-size: clamp(1.6rem, 2.4vw, 2rem) !important;
+  font-weight: 900 !important;
+  color: var(--navy) !important;
+  margin: 0 0 0.35rem !important;
+}
+
+.signup-kicker {
+  font-size: 0.95rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  color: rgba(11, 35, 71, 0.70) !important;
+  margin: 0 0 2rem !important;
+}
+
+/* Make the form bigger */
+.signup-form-large {
+  display: grid !important;
+  gap: 1rem !important;
+}
+
+.signup-form-large input {
+  padding: 1.05rem 1.15rem !important;
+  font-size: 1.05rem !important;
+  border-radius: 12px !important;
+  border: 1px solid rgba(11, 35, 71, 0.25) !important;
+  background: #ffffff !important;
+  color: var(--ink) !important;
+}
+
+/* keep 2-up for first/last name on desktop */
+.signup-form-large .signup-row {
+  grid-template-columns: 1fr 1fr !important;
+  gap: 1rem !important;
+}
+
+/* checkbox readable on white */
+.signup-checkbox {
+  color: rgba(11, 35, 71, 0.85) !important;
+  font-size: 0.9rem !important;
+}
+
+/* Bigger button */
+.signup-btn-large {
+  padding: 1.05rem !important;
+  font-size: 1.1rem !important;
+  border-radius: 12px !important;
+  background: var(--navy) !important;
+  color: #fff !important;
+  border: 2px solid var(--gold) !important;
+}
+
+/* Disclaimer readable on white */
+.signup-disclaimer {
+  color: rgba(11, 35, 71, 0.65) !important;
+  font-size: 0.8rem !important;
+  margin-top: 1rem !important;
+}
+
+.privacy-link {
+  color: var(--navy) !important;
+  font-weight: 700 !important;
+  text-decoration: underline !important;
+  text-underline-offset: 3px !important;
+}
+
+/* Make logo bigger */
+.signup-logo-large {
+  max-width: 620px !important;   /* increase size */
+  width: 100% !important;
+  height: auto !important;
+}
+
+/* Center the logo nicely */
+.signup-right {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Mobile: stack */
+@media (max-width: 900px) {
+  .signup-grid {
+    grid-template-columns: 1fr !important;
+    text-align: center !important;
+  }
+
+  .signup-inner {
+    text-align: center !important;
+  }
+
+  .signup-form-large .signup-row {
+    grid-template-columns: 1fr !important;
+  }
+
+  .signup-logo-large {
+    max-width: 360px !important;
+  }
+}
+
+
 /*ABOUT/BIO*/
 .about-section {
 	padding: 4rem 1rem;
-	background: var(--white);
+	background: var(--navy);
 }
 
 .about-inner {
@@ -463,13 +726,13 @@ body.menu-open .mobile-menu {
 
 .about-title {
 	margin-bottom: 1rem;
-	color: #0b2a4a;
+	color: var(--white);
 	font-size: clamp(1.8rem, 3.4vw, 2.4rem);
 }
 
 .about-text {
 	margin-bottom: 1rem;
-	color: rgba(11, 42, 74, 0.85);
+	color: rgba(255, 255, 255, 0.85);
 	line-height: 1.7;
 	max-width: 62ch;
 }

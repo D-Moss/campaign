@@ -1052,6 +1052,124 @@ body.menu-open .mobile-menu {
   font-size: 0.95rem;
 }
 
+
+
+
+
+
+
+
+
+/*NEW DONATE/VOLUNTEER COMBINED*/
+/* TAKE ACTION (combined Donate + Volunteer) */
+.action-section {
+  background: #0b2a4a;
+  padding: 4.5rem 1rem;
+  color: #ffffff;
+}
+
+.action-inner {
+  width: min(1100px, 90%);
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+
+  position: relative;
+  align-items: start;
+}
+
+/* gold divider that is NOT full height */
+.action-inner::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 3px;
+  height: 68%;          /* not full height */
+  top: 16%;             /* centers it vertically */
+  border-radius: 99px;
+  background: var(--gold);
+
+  opacity: 1;
+  pointer-events: none;
+}
+
+/* each column stacks its own content */
+.action-col {
+  display: grid;
+  gap: 1.4rem;
+  align-content: start;
+}
+
+/* Optional: keep columns visually aligned */
+.action-col--donate {
+  padding-right: 0.5rem;
+}
+
+.action-col--volunteer {
+  padding-left: 0.5rem;
+}
+
+/* featured quick amount */
+.amount-btn.main-donate {
+  border: 2px solid var(--gold);
+  background: rgba(243, 196, 59, 0.12); /* soft gold tint */
+  box-shadow: 0 0 0 4px rgba(243, 196, 59, 0.12);
+  transform: translateY(-1px);
+}
+
+/* keep it feeling interactive */
+.amount-btn.main-donate:hover {
+  border-color: rgba(245, 197, 66, 0.95);
+  box-shadow: 0 0 0 6px rgba(243, 196, 59, 0.16);
+  transform: translateY(-2px);
+}
+
+/* keyboard accessibility */
+.amount-btn.main-donate:focus-visible {
+  outline: 3px solid rgba(243, 196, 59, 0.7);
+  outline-offset: 2px;
+}
+
+
+/* Mobile: stack + replace vertical divider with a horizontal one */
+@media (max-width: 900px) {
+  .action-inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    text-align: center;
+  }
+
+  .action-inner::after {
+    display: none;
+  }
+
+  .action-col--volunteer {
+    padding-top: 2.5rem;
+    border-top: 3px solid var(--gold);
+  }
+
+  .donate-actions,
+  .volunteer-actions {
+    justify-content: center;
+  }
+
+  .volunteer-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+
+
+
+
+
+
 /*FOOTER*/
 .site-footer {
   background: #ffffff;

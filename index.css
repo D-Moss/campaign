@@ -1204,11 +1204,12 @@ body.menu-open .mobile-menu {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.85rem 1.1rem;
-  border-radius: 10px;
+  padding: 1rem 1.35rem;
+  border-radius: 12px;
   background: #0b2a4a;
   color: #ffffff;
-  font-weight: 800;
+  font-weight: 900;
+  font-size: 1.05rem;
   text-decoration: none;
   border: 2px solid #f5c542;
 }
@@ -1239,6 +1240,12 @@ body.menu-open .mobile-menu {
   color: #0b2a4a;
   text-decoration: underline;
   text-underline-offset: 3px;
+}
+
+.footer-links a,
+.footer-contact a {
+	display: block;
+	margin-bottom: 0.6rem;
 }
 
 .footer-social {

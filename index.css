@@ -1,5 +1,5 @@
 :root {
-	--navy: #0b2347;
+	--navy: #0b2a4a;
 	--navy2: #0a1b36;
 	--gold: #f3c43b;
 	--white: #ffffff;
@@ -53,7 +53,6 @@ img {
 /* HEADER */
 .site-header {
 	background: var(--white);
-	/*border-bottom: 2px solid var(--navy);*/
 	position: sticky;
 	top: 0;
 	z-index: 1000;
@@ -102,6 +101,7 @@ img {
 	padding: 10px 10px;
 	color: rgba(11, 35, 71, .92);
 	font-weight: 700;
+	font-size: 1.05rem;
 	letter-spacing: .2px;
 	border-radius: 10px;
 	position: relative;
@@ -139,6 +139,7 @@ img {
 	background: var(--gold);
 	color: var(--white);
 	font-weight: 900;
+	font-size: 1.05rem;
 	letter-spacing: .2px;
 	border-radius: 999px;
 	box-shadow: 0 10px 22px rgba(0, 0, 0, .16);
@@ -337,354 +338,10 @@ body.menu-open .mobile-menu {
 	transform: translateX(0);
 }
 
-.signup-section {
-	padding: 4rem 1rem;
-	background-color: #0b2a4a;
-}
-
-.signup-inner {
-	margin: 0 auto;
-	color: var(--white);
-	text-align: center;
-	max-width: 520px;
-}
-
-.signup-name {
-	margin-bottom: .25rem;
-	font-size: 1.6rem;
-	font-weight: 700;
-	letter-spacing: .4px;
-}
-
-.signup-kicker {
-	margin-bottom: 2rem;
-	color: rgba(255, 255, 255, .85);
-	text-transform: uppercase;
-	font-size: .85rem;
-	letter-spacing: .08em;
-}
-
-.signup-form {
-	display: grid;
-	gap: .75rem;
-}
-
-.signup-row {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	gap: 0.75rem;
-}
-
-.signup-form input[type="text"],
-.signup-form input[type="email"],
-.signup-form input[type="tel"] {
-	padding: 0.85rem 1rem;
-	font-size: 1rem;
-	border-radius: 8px;
-	border: none;
-}
-
-.signup-checkbox {
-	text-align: left;
-	font-size: 0.8rem;
-	display: flex;
-	align-items: flex-start;
-	gap: 0.5rem;
-}
-
-.signup-checkbox input {
-	margin-top: 0.2rem;
-}
-
-.signup-form input:focus {
-	outline: 2px solid #f5c542; /* campaign gold */
-	outline-offset: 2px;
-}
-
-.signup-form button {
-	margin-top: 0.75rem;
-	padding: 0.9rem;
-	background-color: var(--white);
-	color: #0b2a4a;
-	font-weight: 700;
-	border-radius: 8px;
-	border: 2px solid #f5c542;
-	cursor: pointer;
-}
-
-.signup-disclaimer {
-	margin-top: 0.75rem;
-	color: rgba(255, 255, 255, 0.7);
-	font-size: 0.7rem;
-}
-
-/*ADDITIONAL SIGN UP*/
-/* Section base */
-.signup-section {
-  background: #ffffff;
-  padding: 5rem 1rem;
-}
-
-/* 50 / 50 layout */
-.signup-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: center;
-}
-
-/* LEFT: FORM */
-.signup-left {
-  max-width: 560px;
-}
-
-.signup-name {
-  font-size: 1.35rem;
-  font-weight: 800;
-  color: #0b2a4a;
-  margin-bottom: 0.25rem;
-}
-
-.signup-kicker {
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: rgba(11, 42, 74, 0.75);
-  margin-bottom: 2rem;
-}
-
-/* Larger form */
-.signup-form-large input {
-  padding: 1rem 1.1rem;
-  font-size: 1rem;
-  border-radius: 10px;
-  border: 1px solid rgba(11, 42, 74, 0.25);
-}
-
-.signup-form-large input:focus {
-  outline: 2px solid #f5c542;
-  outline-offset: 2px;
-}
-
-.signup-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.9rem;
-}
-
-.signup-checkbox {
-  margin-top: 0.75rem;
-  font-size: 0.85rem;
-  color: rgba(11, 42, 74, 0.85);
-}
-
-/* Bigger button */
-.signup-btn-large {
-  margin-top: 1.25rem;
-  padding: 1rem;
-  font-size: 1.05rem;
-  font-weight: 800;
-  border-radius: 12px;
-  background: #0b2a4a;
-  color: #ffffff;
-  border: 2px solid #f5c542;
-  cursor: pointer;
-}
-
-/* Disclaimer */
-.signup-disclaimer {
-  margin-top: 1rem;
-  font-size: 0.75rem;
-  color: rgba(11, 42, 74, 0.7);
-}
-
-.privacy-link {
-  color: #0b2a4a;
-  font-weight: 600;
-}
-
-/* RIGHT: LOGO */
-.signup-right {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.signup-logo-large {
-  width: 100%;
-  max-width: 480px;   /* THIS controls how big the logo is */
-  height: auto;
-}
-
-/* Mobile */
-@media (max-width: 900px) {
-  .signup-grid {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-    text-align: center;
-  }
-
-  .signup-left {
-    margin: 0 auto;
-  }
-
-  .signup-row {
-    grid-template-columns: 1fr;
-  }
-
-  .signup-logo-large {
-    max-width: 300px;
-  }
-}
-
-.sr-only {
-  position: absolute !important;
-  width: 1px !important;
-  height: 1px !important;
-  padding: 0 !important;
-  margin: -1px !important;
-  overflow: hidden !important;
-  clip: rect(0, 0, 0, 0) !important;
-  white-space: nowrap !important;
-  border: 0 !important;
-}
-
-/* White background + proper spacing */
-.signup-section {
-  background: #ffffff !important;
-  padding: 5rem 1rem !important;
-}
-
-/* IMPORTANT: remove the 520px constraint that’s shrinking everything */
-.signup-inner {
-  max-width: var(--max) !important;   /* 1160px from your :root */
-  width: min(var(--max), 90%) !important;
-  margin: 0 auto !important;
-  color: var(--navy) !important;
-  text-align: left !important;
-}
-
-/* 50/50 layout */
-.signup-grid {
-  display: grid !important;
-  grid-template-columns: 1fr 1fr !important;
-  gap: 4rem !important;
-  align-items: center !important;
-}
-
-/* Left column should be able to grow */
-.signup-left {
-  max-width: none !important;
-}
-
-/* Bigger headings */
-.signup-name {
-  font-size: clamp(1.6rem, 2.4vw, 2rem) !important;
-  font-weight: 900 !important;
-  color: var(--navy) !important;
-  margin: 0 0 0.35rem !important;
-}
-
-.signup-kicker {
-  font-size: 0.95rem !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.08em !important;
-  text-transform: uppercase !important;
-  color: rgba(11, 35, 71, 0.70) !important;
-  margin: 0 0 2rem !important;
-}
-
-/* Make the form bigger */
-.signup-form-large {
-  display: grid !important;
-  gap: 1rem !important;
-}
-
-.signup-form-large input {
-  padding: 1.05rem 1.15rem !important;
-  font-size: 1.05rem !important;
-  border-radius: 12px !important;
-  border: 1px solid rgba(11, 35, 71, 0.25) !important;
-  background: #ffffff !important;
-  color: var(--ink) !important;
-}
-
-/* keep 2-up for first/last name on desktop */
-.signup-form-large .signup-row {
-  grid-template-columns: 1fr 1fr !important;
-  gap: 1rem !important;
-}
-
-/* checkbox readable on white */
-.signup-checkbox {
-  color: rgba(11, 35, 71, 0.85) !important;
-  font-size: 0.9rem !important;
-}
-
-/* Bigger button */
-.signup-btn-large {
-  padding: 1.05rem !important;
-  font-size: 1.1rem !important;
-  border-radius: 12px !important;
-  background: var(--navy) !important;
-  color: #fff !important;
-  border: 2px solid var(--gold) !important;
-}
-
-/* Disclaimer readable on white */
-.signup-disclaimer {
-  color: rgba(11, 35, 71, 0.65) !important;
-  font-size: 0.8rem !important;
-  margin-top: 1rem !important;
-}
-
-.privacy-link {
-  color: var(--navy) !important;
-  font-weight: 700 !important;
-  text-decoration: underline !important;
-  text-underline-offset: 3px !important;
-}
-
-/* Make logo bigger */
-.signup-logo-large {
-  max-width: 620px !important;   /* increase size */
-  width: 100% !important;
-  height: auto !important;
-}
-
-/* Center the logo nicely */
-.signup-right {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-}
-
-/* Mobile: stack */
-@media (max-width: 900px) {
-  .signup-grid {
-    grid-template-columns: 1fr !important;
-    text-align: center !important;
-  }
-
-  .signup-inner {
-    text-align: center !important;
-  }
-
-  .signup-form-large .signup-row {
-    grid-template-columns: 1fr !important;
-  }
-
-  .signup-logo-large {
-    max-width: 360px !important;
-  }
-}
-
-
 /*ABOUT/BIO*/
 .about-section {
 	padding: 4rem 1rem;
-	background: var(--navy);
+	background-color: var(--navy);
 }
 
 .about-inner {
@@ -697,32 +354,19 @@ body.menu-open .mobile-menu {
 }
 
 .about-photo {
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  border-radius: 18px;
-  overflow: hidden;
-  background: rgba(11, 42, 74, 0.08);
+	background: rgba(11, 42, 74, 0.08);
+	border-radius: 18px;
+	width: 100%;
+	aspect-ratio: 4 / 5;
+	overflow: hidden;
 }
 
 .about-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/*.about-photo-placeholder {
-	background: rgba(11, 42, 74, 0.08); /* soft navy tint 
-	color: rgba(11, 42, 74, 0.8);
-	letter-spacing: 0.03em;
-	font-weight: 700;
-	border: 2px dashed rgba(11, 42, 74, 0.35);
-	border-radius: 18px;
-	display: grid;
+	display: block;
 	width: 100%;
-	aspect-ratio: 4 / 5;
-	place-items: center;
-}*/
+	height: 100%;
+	object-fit: cover;
+}
 
 .about-title {
 	margin-bottom: 1rem;
@@ -755,6 +399,138 @@ body.menu-open .mobile-menu {
 .about-btn:hover {
 	transform: translateY(-1px);
 	opacity: 0.95;
+}
+
+/*SIGNUP SECTION*/
+.signup-section {
+	padding: 5rem 1rem !important;
+	background-color: var(--white);
+}
+
+.signup-inner {
+	margin: 0 auto !important;
+	color: var(--navy) !important;
+	text-align: left !important;
+	max-width: var(--max) !important;   /* 1160px from your :root */
+	width: min(var(--max), 90%) !important;
+}
+
+/* 50 / 50 layout */
+.signup-grid {
+	display: grid !important;
+	grid-template-columns: 1fr 1fr !important;
+	gap: 4rem !important;
+	align-items: center !important;
+}
+
+/* LEFT: FORM */
+.signup-left {
+	max-width: none !important;
+}
+
+.signup-name {
+	margin: 0 0 0.35rem !important;
+	color: var(--navy);
+	font-size: 1.35rem;
+	font-weight: 900;
+}
+
+.signup-kicker {
+	margin: 0 0 2rem !important;
+	color: rgba(11, 35, 71, 0.70) !important;
+	text-transform: uppercase;
+	font-size: 1rem;
+	font-weight: 600;
+	letter-spacing: 0.06em;
+}
+
+/* Larger form */
+.signup-form-large {
+  display: grid !important;
+  gap: 1rem !important;
+}
+
+.signup-form-large input {
+	padding: 1.05rem 1.15rem !important;
+	background: var(--white); !important;
+	color: var(--ink) !important;
+	font-size: 1.05rem !important;
+	border-radius: 12px !important;
+	border: 1px solid rgba(11, 35, 71, 0.25) !important;
+}
+
+.signup-form-large input:focus {
+	outline: 2px solid #f5c542;
+	outline-offset: 2px;
+}
+
+.signup-form-large .signup-row {
+	grid-template-columns: 1fr 1fr !important;
+	gap: 1rem !important;
+}
+
+.signup-row {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 0.9rem;
+}
+
+.sr-only {
+	margin: -1px !important;
+	padding: 0 !important;
+	border: 0 !important;
+	position: absolute !important;
+	width: 1px !important;
+	height: 1px !important;
+	overflow: hidden !important;
+	clip: rect(0, 0, 0, 0) !important;
+	white-space: nowrap !important;
+}
+
+.signup-checkbox {
+	margin-top: 0.75rem;
+	color: rgba(11, 42, 74, 0.85);
+	font-size: 0.85rem;
+}
+
+/* Bigger button */
+.signup-btn-large {
+	margin-top: 1.25rem;
+	padding: 1rem;
+	background: #0b2a4a;
+	color: var(--white);
+	font-size: 1.05rem;
+	font-weight: 800;
+	border-radius: 12px;
+	border: 2px solid #f5c542;
+	cursor: pointer;
+}
+
+/* Disclaimer */
+.signup-disclaimer {
+	margin-top: 1rem;
+	color: rgba(11, 35, 71, 0.65) !important;
+	font-size: 0.75rem;
+}
+
+.privacy-link {
+	color: var(--navy) !important;
+	text-decoration: underline !important;
+	text-underline-offset: 3px !important;
+	font-weight: 600;
+}
+
+/* RIGHT: LOGO */
+.signup-right {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.signup-logo-large {
+	height: auto;
+	width: 100%;
+	max-width: 620px !important;   /* THIS controls how big the logo is */
 }
 
 /*POLICY SECTION*/
@@ -822,353 +598,276 @@ body.menu-open .mobile-menu {
 	display: inline-block;
 }
 
-/*DONATION*/
-.donate-section {
-  background: #0b2a4a;
-  padding: 4.5rem 1rem;
-  color: #ffffff;
-}
-
-.donate-inner {
-  width: min(1100px, 90%);
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 2.5rem;
-  align-items: center;
-}
-
-.donate-title {
-  font-size: clamp(2rem, 4vw, 2.8rem);
-  margin-bottom: 1rem;
-}
-
-.donate-desc {
-  color: rgba(255, 255, 255, 0.85);
-  line-height: 1.7;
-  max-width: 55ch;
-  margin-bottom: 1.75rem;
-}
-
-.donate-actions {
-  display: flex;
-  gap: 0.85rem;
-  flex-wrap: wrap;
-  margin-bottom: 1rem;
-}
-
-.donate-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.95rem 1.2rem;
-  border-radius: 10px;
-  font-weight: 800;
-  text-decoration: none;
-  cursor: pointer;
-  border: 2px solid transparent;
-}
-
-.donate-btn.primary {
-  background: #ffffff;
-  color: #0b2a4a;
-  border-color: #f5c542;
-}
-
-.donate-btn.ghost {
-  background: transparent;
-  color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.35);
-}
-
-.donate-btn.full {
-  width: 100%;
-  margin-top: 1rem;
-}
-
-.donate-fineprint {
-  font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.donate-panel {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 18px;
-  padding: 1.5rem;
-}
-
-.donate-panel-title {
-  font-weight: 800;
-  letter-spacing: 0.02em;
-  margin-bottom: 1rem;
-}
-
-.donate-amounts {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.75rem;
-}
-
-.amount-btn {
-  padding: 0.9rem 1rem;
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  background: rgba(255, 255, 255, 0.04);
-  color: #ffffff;
-  font-weight: 800;
-  cursor: pointer;
-}
-
-.amount-btn:hover {
-  border-color: rgba(245, 197, 66, 0.65);
-}
-
-.donate-custom {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  margin-top: 1rem;
-  padding: 0.85rem 1rem;
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  background: rgba(255, 255, 255, 0.04);
-}
-
-.donate-custom-label {
-  font-weight: 800;
-  color: rgba(255, 255, 255, 0.85);
-}
-
-.donate-custom-input {
-  flex: 1;
-  border: none;
-  outline: none;
-  background: transparent;
-  color: #ffffff;
-  font-size: 1rem;
-}
-
-.donate-custom-input::placeholder {
-  color: rgba(255, 255, 255, 0.6);
-}
-
-.donate-panel-note {
-  font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.7);
-  margin-top: 0.75rem;
-}
-
-/*VOLUNTEER*/
-/* Gold line to separate Donate + Volunteer (same navy background) */
-.volunteer-section {
-  background: #0b2a4a;
-  padding: 4.5rem 1rem;
-  border-top: 3px solid #f5c542; /* gold divider */
-  color: #ffffff;
-}
-
-.volunteer-inner {
-  width: min(1100px, 90%);
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: 2.5rem;
-  align-items: start;
-}
-
-.volunteer-title {
-  font-size: clamp(2rem, 4vw, 2.6rem);
-  margin-bottom: 0.75rem;
-}
-
-.volunteer-desc {
-  color: rgba(255, 255, 255, 0.85);
-  line-height: 1.7;
-  max-width: 60ch;
-  margin-bottom: 1.5rem;
-}
-
-.volunteer-actions {
-  display: flex;
-  gap: 0.85rem;
-  flex-wrap: wrap;
-  margin-bottom: 1rem;
-}
-
-.volunteer-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.95rem 1.2rem;
-  border-radius: 10px;
-  font-weight: 800;
-  text-decoration: none;
-  border: 2px solid transparent;
-}
-
-.volunteer-btn.primary {
-  background: #ffffff;
-  color: #0b2a4a;
-  border-color: #f5c542;
-}
-
-.volunteer-btn.ghost {
-  background: transparent;
-  color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.35);
-}
-
-.volunteer-fineprint {
-  font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.7);
-  margin-top: 0.5rem;
-}
-
-/* Right-side “ways to help” cards */
-.volunteer-cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.85rem;
-}
-
-.help-card {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 16px;
-  padding: 1.2rem;
-}
-
-.help-card h3 {
-  margin-bottom: 0.35rem;
-  font-size: 1.05rem;
-  color: #ffffff;
-}
-
-.help-card p {
-  margin: 0;
-  color: rgba(255, 255, 255, 0.82);
-  line-height: 1.55;
-  font-size: 0.95rem;
-}
-
-
-
-
-
-
-
-
-
-/*NEW DONATE/VOLUNTEER COMBINED*/
 /* TAKE ACTION (combined Donate + Volunteer) */
 .action-section {
-  background: #0b2a4a;
-  padding: 4.5rem 1rem;
-  color: #ffffff;
+	padding: 4.5rem 1rem;
+	background: var(--navy);
+	color: var(--white);
 }
 
 .action-inner {
-  width: min(1100px, 90%);
-  margin: 0 auto;
-
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-
-  position: relative;
-  align-items: start;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 3rem;
+	position: relative;
+	align-items: start;
+	width: min(1100px, 90%);
 }
 
 /* gold divider that is NOT full height */
 .action-inner::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-
-  width: 3px;
-  height: 68%;          /* not full height */
-  top: 16%;             /* centers it vertically */
-  border-radius: 99px;
-  background: var(--gold);
-
-  opacity: 1;
-  pointer-events: none;
+	background: var(--gold);
+	border-radius: 99px;
+	content: "";
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 3px;
+	height: 68%;          /* not full height */
+	top: 16%;             /* centers it vertically */
+	opacity: 1;
+	pointer-events: none;
 }
 
 /* each column stacks its own content */
 .action-col {
-  display: grid;
-  gap: 1.4rem;
-  align-content: start;
+	display: grid;
+	gap: 1.4rem;
+	align-content: start;
 }
 
 /* Optional: keep columns visually aligned */
 .action-col--donate {
-  padding-right: 0.5rem;
+	padding-right: 0.5rem;
 }
 
-.action-col--volunteer {
-  padding-left: 0.5rem;
+.donate-title {
+	margin-bottom: 1rem;
+	font-size: clamp(2rem, 4vw, 2.8rem);
+}
+
+.donate-desc {
+	margin-bottom: 1.75rem;
+	color: rgba(255, 255, 255, 0.85);
+	line-height: 1.7;
+	max-width: 55ch;
+}
+
+.donate-actions {
+	margin-bottom: 1rem;
+	display: flex;
+	gap: 0.85rem;
+	flex-wrap: wrap;
+}
+
+.donate-btn {
+	padding: 0.95rem 1.2rem;
+	text-decoration: none;
+	font-weight: 800;
+	border-radius: 10px;
+	border: 2px solid transparent;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
+
+.donate-btn.primary {
+	background: #ffffff;
+	color: #0b2a4a;
+	border-color: #f5c542;
+}
+
+.donate-btn.ghost {
+	background: transparent;
+	color: #ffffff;
+	border-color: rgba(255, 255, 255, 0.35);
+}
+
+.donate-btn.full {
+	margin-top: 1rem;
+	width: 100%;
+}
+
+.donate-fineprint {
+	color: rgba(255, 255, 255, 0.7);
+	font-size: 0.8rem;
+}
+
+.donate-panel {
+	padding: 1.5rem;
+	background: rgba(255, 255, 255, 0.06);
+	border: 1px solid rgba(255, 255, 255, 0.14);
+	border-radius: 18px;
+}
+
+.donate-panel-title {
+	margin-bottom: 1rem;
+	letter-spacing: 0.02em;
+	font-weight: 800;
+}
+
+.donate-amounts {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 0.75rem;
+}
+
+.amount-btn {
+	padding: 0.9rem 1rem;
+	background: rgba(255, 255, 255, 0.04);
+	color: #ffffff;
+	font-weight: 800;
+	border-radius: 12px;
+	border: 1px solid rgba(255, 255, 255, 0.18);
+	cursor: pointer;
+}
+
+.amount-btn:hover {
+	border-color: rgba(245, 197, 66, 0.65);
 }
 
 /* featured quick amount */
 .amount-btn.main-donate {
-  border: 2px solid var(--gold);
-  background: rgba(243, 196, 59, 0.12); /* soft gold tint */
-  box-shadow: 0 0 0 4px rgba(243, 196, 59, 0.12);
-  transform: translateY(-1px);
+	background: rgba(243, 196, 59, 0.12); /* soft gold tint */
+	border: 2px solid var(--gold);
+	box-shadow: 0 0 0 4px rgba(243, 196, 59, 0.12);
+	transform: translateY(-1px);
 }
 
 /* keep it feeling interactive */
 .amount-btn.main-donate:hover {
-  border-color: rgba(245, 197, 66, 0.95);
-  box-shadow: 0 0 0 6px rgba(243, 196, 59, 0.16);
-  transform: translateY(-2px);
+	border-color: rgba(245, 197, 66, 0.95);
+	box-shadow: 0 0 0 6px rgba(243, 196, 59, 0.16);
+	transform: translateY(-2px);
 }
 
 /* keyboard accessibility */
 .amount-btn.main-donate:focus-visible {
-  outline: 3px solid rgba(243, 196, 59, 0.7);
-  outline-offset: 2px;
+	outline: 3px solid rgba(243, 196, 59, 0.7);
+	outline-offset: 2px;
 }
 
-
-/* Mobile: stack + replace vertical divider with a horizontal one */
-@media (max-width: 900px) {
-  .action-inner {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-    text-align: center;
-  }
-
-  .action-inner::after {
-    display: none;
-  }
-
-  .action-col--volunteer {
-    padding-top: 2.5rem;
-    border-top: 3px solid var(--gold);
-  }
-
-  .donate-actions,
-  .volunteer-actions {
-    justify-content: center;
-  }
-
-  .volunteer-cards {
-    grid-template-columns: 1fr;
-  }
+.amount-btn.is-active {
+	border-color: var(--gold);
+	box-shadow: 0 0 0 4px rgba(243, 196, 59, 0.14);
+	transform: translateY(-1px);
 }
 
+.donate-custom {
+	margin-top: 1rem;
+	padding: 0.85rem 1rem;
+	background: rgba(255, 255, 255, 0.04);
+	border-radius: 12px;
+	border: 1px solid rgba(255, 255, 255, 0.18);
+	display: flex;
+	align-items: center;
+	gap: 0.6rem;
+}
 
+.donate-custom-label {
+	color: rgba(255, 255, 255, 0.85);
+	font-weight: 800;
+}
 
+.donate-custom-input {
+	background: transparent;
+	color: #ffffff;
+	font-size: 1rem;
+	border: none;
+	flex: 1;
+	outline: none;
+}
 
+.donate-custom-input::placeholder {
+	color: rgba(255, 255, 255, 0.6);
+}
 
+.donate-panel-note {
+	margin-top: 0.75rem;
+	color: rgba(255, 255, 255, 0.7);
+	font-size: 0.75rem;
+}
 
+/* Gold line to separate Donate + Volunteer (same navy background) */
+.action-col--volunteer {
+	padding-left: 0.5rem;
+}
 
+.volunteer-title {
+	margin-bottom: 0.75rem;
+	font-size: clamp(2rem, 4vw, 2.6rem);
+}
 
+.volunteer-desc {
+	margin-bottom: 1.5rem;
+	color: rgba(255, 255, 255, 0.85);
+	line-height: 1.7;
+	max-width: 60ch;
+}
+
+.volunteer-actions {
+	margin-bottom: 1rem;
+	display: flex;
+	gap: 0.85rem;
+	flex-wrap: wrap;
+}
+
+.volunteer-btn {
+	padding: 0.95rem 1.2rem;
+	text-decoration: none;
+	font-weight: 800;
+	border-radius: 10px;
+	border: 2px solid transparent;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.volunteer-btn.primary {
+	background: #ffffff;
+	color: #0b2a4a;
+	border-color: #f5c542;
+}
+
+.volunteer-btn.ghost {
+	background: transparent;
+	color: #ffffff;
+	border-color: rgba(255, 255, 255, 0.35);
+}
+
+.volunteer-fineprint {
+	margin-top: 0.5rem;
+	color: rgba(255, 255, 255, 0.7);
+	font-size: 0.8rem;
+}
+
+.volunteer-cards {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 0.85rem;
+}
+
+.help-card {
+	padding: 1.2rem;
+	background: rgba(255, 255, 255, 0.06);
+	border: 1px solid rgba(255, 255, 255, 0.14);
+	border-radius: 16px;
+}
+
+.help-card h3 {
+	margin-bottom: 0.35rem;
+	color: #ffffff;
+	font-size: 1.05rem;
+}
+
+.help-card p {
+	margin: 0;
+	color: rgba(255, 255, 255, 0.82);
+	font-size: 0.95rem;
+	line-height: 1.55;
+}
 
 /*FOOTER*/
 .site-footer {
@@ -1365,4 +1064,68 @@ body.menu-open .mobile-menu {
 		margin-left: auto;
 		margin-right: auto;
 	}
+}
+/*RESPONSIVENESS*/
+@media (max-width: 900px) {
+	.signup-grid {
+		text-align: center !important;
+		grid-template-columns: 1fr !important;
+	}
+	.signup-inner {
+		text-align: center !important;
+	}
+	.signup-form-large .signup-row {
+		grid-template-columns: 1fr !important;
+	}
+	.signup-logo-large {
+		max-width: 360px !important;
+	}
+}
+
+@media (max-width: 900px) {
+	.action-inner {
+		text-align: center;
+		grid-template-columns: 1fr;
+		gap: 2.5rem;
+	}
+	.action-inner::after {
+		display: none;
+	}
+	.action-col--volunteer {
+		padding-top: 2.5rem;
+		border-top: 3px solid var(--gold);
+	}
+	.donate-actions,
+	.volunteer-actions {
+		justify-content: center;
+	}
+	.volunteer-cards {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media (max-width: 900px) {
+  .action-inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    text-align: center;
+  }
+
+  .action-inner::after {
+    display: none;
+  }
+
+  .action-col--volunteer {
+    padding-top: 2.5rem;
+    border-top: 3px solid var(--gold);
+  }
+
+  .donate-actions,
+  .volunteer-actions {
+    justify-content: center;
+  }
+
+  .volunteer-cards {
+    grid-template-columns: 1fr;
+  }
 }

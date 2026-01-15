@@ -96,7 +96,10 @@ const observer = new IntersectionObserver(
 	{ threshold: 0.3 }
 	);
 
-observer.observe(document.querySelector("#fightin-for"));
+const fightinFor = document.querySelector("#fightin-for");
+if (fightinFor) observer.observe(fightinFor);
+
+
 
 (() => {
   const continueLink = document.getElementById("donateContinue");
@@ -105,40 +108,35 @@ observer.observe(document.querySelector("#fightin-for"));
 
   if (!continueLink) return;
 
-  // IMPORTANT: set this to the *real* ActBlue donate page URL (no params)
+  // Base ActBlue URL (must be valid or you'll always get 404)
   const baseDonateUrl = continueLink.getAttribute("href");
 
   function setContinueAmount(amount) {
-    // clear active styles
-    amountButtons.forEach(b => b.classList.remove("is-active"));
-
-    const url = new URL(baseDonateUrl);
-    url.searchParams.set("amount", amount);
-
-    // Optional tracking (nice to have)
-    // url.searchParams.set("refcode", "website-quickamount");
-
-    continueLink.setAttribute("href", url.toString());
+  	const url = new URL(baseDonateUrl);
+  	url.searchParams.set("amount", amount);
+  	continueLink.setAttribute("href", url.toString());
   }
 
   // Quick amount buttons
   amountButtons.forEach(btn => {
-    btn.addEventListener("click", () => {
-      const amount = btn.dataset.amount;
-      btn.classList.add("is-active");
-      if (customInput) customInput.value = ""; // clear custom when using preset
-      setContinueAmount(amount);
-    });
+  	btn.addEventListener("click", () => {
+  		const amount = btn.dataset.amount;
+  		const url = new URL(baseDonateUrl);
+  		url.searchParams.set("amount", amount);
+  		window.open(url.toString(), "_blank", "noopener");
+  	});
   });
+
 
   // Custom amount typing
   if (customInput) {
     customInput.addEventListener("input", () => {
+      // clear button highlight when custom is used
+      amountButtons.forEach(b => b.classList.remove("is-active"));
+
       const raw = (customInput.value || "").trim();
-      if (!raw) {
-        // If they clear it, fall back to whatever the link already is
-        return;
-      }
+      if (!raw) return;
+
       const amount = Number(raw);
       if (!Number.isFinite(amount) || amount <= 0) return;
 
@@ -146,9 +144,10 @@ observer.observe(document.querySelector("#fightin-for"));
     });
   }
 
-  // Default: if you want $100 preselected on page load
+  // Default: preselect $100 on load
   const defaultBtn = document.querySelector(".amount-btn.main-donate");
   if (defaultBtn?.dataset.amount) {
+    amountButtons.forEach(b => b.classList.remove("is-active"));
     defaultBtn.classList.add("is-active");
     setContinueAmount(defaultBtn.dataset.amount);
   }

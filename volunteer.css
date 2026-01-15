@@ -21,15 +21,15 @@
 }
 
 .volunteer-subtitle{
-  color: rgba(255,255,255,.85);
+  color: rgba(255, 255, 255, .85);
   margin: 0 auto;
   max-width: 60ch;
   line-height: 1.6;
 }
 
 .volunteer-form{
-  background: rgba(255,255,255,.06);
-  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255, 255, 255, .06);
+  border: 1px solid rgba(255, 255, 255, .14);
   border-radius: 18px;
   padding: clamp(18px, 3vw, 28px);
   backdrop-filter: blur(6px);
@@ -43,7 +43,7 @@
 
 .field label{
   display: block;
-  color: rgba(255,255,255,.92);
+  color: rgba(255, 255, 255, .92);
   font-weight: 600;
   margin-bottom: 6px;
 }
@@ -52,14 +52,14 @@
   width: 100%;
   padding: 12px 12px;
   border-radius: 12px;
-  border: 1px solid rgba(255,255,255,.18);
+  border: 1px solid rgba(255, 255, 255, .18);
   background: rgba(0,0,0,.18);
   color: #fff;
   outline: none;
 }
 
 .field input::placeholder{
-  color: rgba(255,255,255,.55);
+  color: rgba(255, 255, 255, .55);
 }
 
 .field input:focus{
@@ -70,18 +70,18 @@
 .hint{
   display: block;
   margin-top: 6px;
-  color: rgba(255,255,255,.7);
+  color: rgba(255, 255, 255, .7);
   font-size: 12.5px;
 }
 
 .fieldset{
   margin-top: 18px;
   padding-top: 14px;
-  border-top: 1px solid rgba(255,255,255,.14);
+  border-top: 1px solid rgba(255, 255, 255, .14);
 }
 
 .fieldset legend{
-  color: rgba(255,255,255,.92);
+  color: rgba(255, 255, 255, .92);
   font-weight: 700;
   margin-bottom: 10px;
 }

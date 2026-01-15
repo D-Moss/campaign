@@ -97,3 +97,59 @@ const observer = new IntersectionObserver(
 	);
 
 observer.observe(document.querySelector("#fightin-for"));
+
+(() => {
+  const continueLink = document.getElementById("donateContinue");
+  const customInput = document.getElementById("customAmount");
+  const amountButtons = document.querySelectorAll(".amount-btn");
+
+  if (!continueLink) return;
+
+  // IMPORTANT: set this to the *real* ActBlue donate page URL (no params)
+  const baseDonateUrl = continueLink.getAttribute("href");
+
+  function setContinueAmount(amount) {
+    // clear active styles
+    amountButtons.forEach(b => b.classList.remove("is-active"));
+
+    const url = new URL(baseDonateUrl);
+    url.searchParams.set("amount", amount);
+
+    // Optional tracking (nice to have)
+    // url.searchParams.set("refcode", "website-quickamount");
+
+    continueLink.setAttribute("href", url.toString());
+  }
+
+  // Quick amount buttons
+  amountButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const amount = btn.dataset.amount;
+      btn.classList.add("is-active");
+      if (customInput) customInput.value = ""; // clear custom when using preset
+      setContinueAmount(amount);
+    });
+  });
+
+  // Custom amount typing
+  if (customInput) {
+    customInput.addEventListener("input", () => {
+      const raw = (customInput.value || "").trim();
+      if (!raw) {
+        // If they clear it, fall back to whatever the link already is
+        return;
+      }
+      const amount = Number(raw);
+      if (!Number.isFinite(amount) || amount <= 0) return;
+
+      setContinueAmount(String(amount));
+    });
+  }
+
+  // Default: if you want $100 preselected on page load
+  const defaultBtn = document.querySelector(".amount-btn.main-donate");
+  if (defaultBtn?.dataset.amount) {
+    defaultBtn.classList.add("is-active");
+    setContinueAmount(defaultBtn.dataset.amount);
+  }
+})();

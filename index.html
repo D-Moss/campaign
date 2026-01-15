@@ -226,20 +226,20 @@
 					<p class="donate-panel-title">Quick amounts</p>
 
 					<div class="donate-amounts">
-						<button type="button" class="amount-btn">$25</button>
-						<button type="button" class="amount-btn">$50</button>
-						<button type="button" class="amount-btn main-donate">$100</button>
-						<button type="button" class="amount-btn">$1000</button>
-						<button type="button" class="amount-btn">$2500</button>
-						<button type="button" class="amount-btn">$3500</button>
+						<button type="button" class="amount-btn" data-amount="25">$25</button>
+						<button type="button" class="amount-btn" data-amount="50">$50</button>
+						<button type="button" class="amount-btn main-donate" data-amount="100">$100</button>
+						<button type="button" class="amount-btn" data-amount="1000">$1000</button>
+						<button type="button" class="amount-btn" data-amount="2500">$2500</button>
+						<button type="button" class="amount-btn" data-amount="3500">$3500</button>
 					</div>
 
 					<div class="donate-custom">
 						<span class="donate-custom-label">Other</span>
-						<input class="donate-custom-input" type="text" placeholder="$" aria-label="Custom donation amount" />
+						<input class="donate-custom-input" id="customAmount" type="number" inputmode="decimal" min="1" step="1" placeholder="$" aria-label="Custom donation amount"/>
 					</div>
 
-					<a class="donate-btn primary full" href="https://secure.actblue.com/donate/shaun-griffith-1" target="_blank" rel="noopener">
+					<a href="https://secure.actblue.com/donate/shaun-griffith-1" class="donate-btn primary full" id="donateContinue" target="_blank" rel="noopener">
 						Continue
 					</a>
 					<p class="donate-panel-note">You’ll be taken to our secure donation page.</p>

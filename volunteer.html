@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Shaun Griffith for Congress (PA-3) — Putting PA First.">
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<link rel="stylesheet" type="text/css" href="volunteer.css">
+	<title>Shaun Griffith for Congress | PA-03</title>
+</head>
+<body>
+	<!--Skip link (accessibility)-->
+	<a class="skip-link" href="#main">Skip to content</a>
+
+	<header class="site-header" id="top">
+		<nav class="nav" aria-label="Primary">
+			<!-- Left: Logo -->
+			<a class="nav_logo" href="#home" aria-label="Shaun Griffith for Congress - Home">
+				<img src="https://i.postimg.cc/7Y83PDDc/PA03-SG.png" alt="Shaun Griffith PA-3 for Congress logo">
+			</a>
+
+			<!-- Right: Desktop Links + Donate + Toggle -->
+			<div class="nav_right">
+				<ul class="nav_links" role="list" aria-label="Site links">
+					<li><a class="nav_link" href="index.html">Home</a></li>
+					<li><a class="nav_link" href="#about">About</a></li>
+					<li><a class="nav_link" href="priorities.html">Priorities</a></li>
+					<li><a class="nav_link" href="testimonials.html">Testimonials</a></li>
+					<li><a class="nav_link" href="volunteer.html">Volunteer</a></li>
+				</ul>
+
+				<a class="nav_donate" href="https://secure.actblue.com/donate/shaun-griffith-1" target="_blank">Donate</a>
+
+				<button class="nav_toggle" type="button" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false">
+					<span class="burger" aria-hidden="true">
+						<span></span><span></span><span></span>
+					</span>
+				</button>
+			</div>
+		</nav>
+	</header>
+
+	<!-- Mobile overlay -->
+	<div class="menu-overlay" data-menu-overlay hidden></div>
+
+	<!-- Mobile full-screen drawer -->
+	<aside class="mobile-menu" id="mobileMenu" aria-hidden="true">
+		<div class="mobile-menu_inner">
+			<div class="mobile-menu_top">
+				<a class="mobile-menu_logo" href="#home" aria-label="Home">
+					<img src="images/PA03-SG.png" alt="Shaun Griffith PA-3 for Congress logo">
+				</a>
+
+				<button class="mobile-menu_close" type="button" aria-label="Close menu">✕</button>
+			</div>
+
+			<nav class="mobile-menu_nav" aria-label="Mobile">
+				<a class="mobile-menu_link" href="index.html">Home</a>
+				<a class="mobile-menu_link" href="#about">About</a>
+				<a class="mobile-menu_link" href="priorities.html">Priorities</a>
+				<a class="mobile-menu_link" href="testimonials.html">Testimonials</a>
+				<a class="mobile-menu_link" href="volunteer.html">Volunteer</a>
+
+				<a class="mobile-menu_donate" href="https://secure.actblue.com/donate/shaun-griffith-1">Donate</a>
+			</nav>
+
+			<div class="mobile-menu_social">
+				<p class="mobile-menu_social-label">Connect</p>
+				<div class="mobile-menu_social-links">
+					<a href="#" aria-label="Facebook">Facebook</a>
+					<a href="#" aria-label="Instagram">Instagram</a>
+					<a href="#" aria-label="X / Twitter">X</a>
+					<a href="#" aria-label="YouTube">YouTube</a>
+				</div>
+			</div>
+		</div>
+	</aside>
+
+	<main id="main">
+  <section class="volunteer-page" id="volunteer">
+    <div class="volunteer-wrap">
+      <header class="volunteer-header">
+        <h1 class="volunteer-title">Volunteer</h1>
+        <p class="volunteer-subtitle">
+          Help us reach voters across PA-03. Fill this out and we’ll follow up soon.
+        </p>
+      </header>
+
+      <form class="volunteer-form" id="volunteerForm" action="#" method="post" novalidate>
+        <div class="volunteer-grid">
+          <div class="field">
+            <label for="firstName">First name <span aria-hidden="true">*</span></label>
+            <input id="firstName" name="firstName" type="text" autocomplete="given-name" required />
+          </div>
+
+          <div class="field">
+            <label for="lastName">Last name <span aria-hidden="true">*</span></label>
+            <input id="lastName" name="lastName" type="text" autocomplete="family-name" required />
+          </div>
+
+          <div class="field">
+            <label for="email">Email <span aria-hidden="true">*</span></label>
+            <input id="email" name="email" type="email" autocomplete="email" required />
+          </div>
+
+          <div class="field">
+            <label for="phone">Phone <span aria-hidden="true">*</span></label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required />
+            <small class="hint">Example: (215) 555-0123</small>
+          </div>
+
+          <div class="field">
+            <label for="zip">ZIP code <span aria-hidden="true">*</span></label>
+            <input id="zip" name="zip" type="text" inputmode="numeric" autocomplete="postal-code" maxlength="10" required />
+          </div>
+        </div>
+
+        <fieldset class="fieldset">
+          <legend>How would you like to help? <span aria-hidden="true">*</span></legend>
+
+          <div class="checks">
+            <label class="check">
+              <input type="checkbox" name="volunteerWays" value="Canvassing" />
+              <span>Canvassing (door-to-door)</span>
+            </label>
+
+            <label class="check">
+              <input type="checkbox" name="volunteerWays" value="Social Media" />
+              <span>Social media / content</span>
+            </label>
+
+            <label class="check">
+              <input type="checkbox" name="volunteerWays" value="Yard Signs" />
+              <span>Yard signs / visibility</span>
+            </label>
+
+            <label class="check">
+              <input type="checkbox" name="volunteerWays" value="Other" />
+              <span>Other</span>
+            </label>
+          </div>
+
+          <p class="error" id="waysError" role="alert" aria-live="polite"></p>
+        </fieldset>
+
+        <fieldset class="fieldset">
+          <legend>Text message opt-in</legend>
+
+          <label class="check">
+            <input type="checkbox" id="smsOptIn" name="smsOptIn" value="yes" />
+            <span>
+              Yes — I agree to receive campaign text messages (recurring). Msg & data rates may apply.
+              Reply STOP to end, HELP for help.
+            </span>
+          </label>
+        </fieldset>
+
+        <button class="btn btn-gold volunteer-submit" type="submit">
+          Sign Up to Volunteer
+        </button>
+
+        <p class="fineprint">
+          By submitting this form, you agree to be contacted by the campaign.
+        </p>
+      </form>
+    </div>
+  </section>
+</main>
+
+
+	<!--FOOTER-->
+	<footer class="site-footer" id="footer">
+		<div class="footer-inner">
+
+			<div class="footer-brand">
+				<p class="footer-name">Shaun Griffith</p>
+				<p class="footer-slogan">Fight for Philly’s Future</p>
+
+				<a href="https://secure.actblue.com/donate/shaun-griffith-1" class="footer-donate" target="_blank" rel="noopener noreferrer">
+					Donate on ActBlue
+				</a>
+			</div>
+
+			<nav class="footer-links" aria-label="Footer navigation">
+				<h3 class="footer-heading">Explore</h3>
+				<a href="about.html">Meet Shaun</a>
+				<a href="priorities.html">What I’m Fightin For</a>
+				<a href="https://secure.actblue.com/donate/shaun-griffith-1" target="_blank">Donate</a>
+				<a href="volunteer.html">Get Involved</a>
+			</nav>
+
+			<div class="footer-contact">
+				<h3 class="footer-heading">Contact</h3>
+				<a href="mailto:info@yourcampaign.org">contact@griffithforcongress.org</a>
+				<a href="tel:+14452846291">(445) 284-6291</a>
+
+				<div class="footer-social">
+					<a href="#" aria-label="Instagram">Instagram</a>
+					<a href="#" aria-label="Twitter / X">X</a>
+					<a href="#" aria-label="Facebook">Facebook</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="footer-bottom">
+			<p class="footer-paidfor">
+				Paid for by Friends of Shaun Griffith.
+			</p>
+			<p class="footer-legal">
+				Message & data rates may apply for SMS updates. <a href="#" class="footer-privacy">Privacy Policy</a>
+			</p>
+		</div>
+	</footer>
+
+	<script src="volunteer.js"></script>
+</body>
+</html>

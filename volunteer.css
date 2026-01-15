@@ -1,0 +1,137 @@
+.volunteer-page{
+	padding: clamp(40px, 6vw, 80px) 16px;
+	background: var(--navy); /* page background stays navy from body/site */
+}
+
+.volunteer-wrap{
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.volunteer-header{
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+.volunteer-title{
+  color: #fff;
+  font-size: clamp(32px, 4vw, 46px);
+  letter-spacing: .5px;
+  margin: 0 0 8px;
+}
+
+.volunteer-subtitle{
+  color: rgba(255,255,255,.85);
+  margin: 0 auto;
+  max-width: 60ch;
+  line-height: 1.6;
+}
+
+.volunteer-form{
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 18px;
+  padding: clamp(18px, 3vw, 28px);
+  backdrop-filter: blur(6px);
+}
+
+.volunteer-grid{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.field label{
+  display: block;
+  color: rgba(255,255,255,.92);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.field input{
+  width: 100%;
+  padding: 12px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.18);
+  background: rgba(0,0,0,.18);
+  color: #fff;
+  outline: none;
+}
+
+.field input::placeholder{
+  color: rgba(255,255,255,.55);
+}
+
+.field input:focus{
+  border-color: rgba(212,175,55,.85); /* gold-ish */
+  box-shadow: 0 0 0 3px rgba(212,175,55,.18);
+}
+
+.hint{
+  display: block;
+  margin-top: 6px;
+  color: rgba(255,255,255,.7);
+  font-size: 12.5px;
+}
+
+.fieldset{
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255,255,255,.14);
+}
+
+.fieldset legend{
+  color: rgba(255,255,255,.92);
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.checks{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 14px;
+}
+
+.check{
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  color: rgba(255,255,255,.88);
+  line-height: 1.4;
+  font-size: 15px;
+}
+
+.check input{
+  margin-top: 4px;
+  width: 18px;
+  height: 18px;
+  accent-color: #d4af37; /* gold */
+}
+
+.error{
+  margin: 10px 0 0;
+  color: #ffd6d6;
+  font-weight: 600;
+  min-height: 1.2em;
+}
+
+.volunteer-submit{
+  margin-top: 18px;
+  width: 100%;
+  font-size: 18px;
+  padding: 14px 16px;
+  border-radius: 14px;
+}
+
+.fineprint{
+  margin: 12px 0 0;
+  color: rgba(255,255,255,.72);
+  font-size: 12.5px;
+  line-height: 1.5;
+}
+
+/* Mobile */
+@media (max-width: 700px){
+  .volunteer-grid{ grid-template-columns: 1fr; }
+  .checks{ grid-template-columns: 1fr; }
+}

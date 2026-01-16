@@ -1054,7 +1054,7 @@ body.menu-open .mobile-menu {
 
 @media (max-width: 900px) {
 	.about-inner {
-		text-align: center;
+		text-align: left;
 		grid-template-columns: 1fr;
 	}
 	.about-photo-placeholder {

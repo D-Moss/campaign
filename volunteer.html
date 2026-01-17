@@ -87,100 +87,138 @@
         </p>
       </header>
 
-      <form class="volunteer-form" id="volunteerForm" name="campaign-signup" method="POST" data-netlify="true" netlify-honeypot="bot-field" autocomplete="on">
-      	<input type="hidden" name="form-name" value="campaign-signup" />
-      	<input type="hidden" name="volunteerWaysSelected" id="volunteerWaysSelected" value="" />
-      	<input type="hidden" name="smsOptInSelected" id="smsOptInSelected" value="No" />
-      	<p hidden>
-      		<label>Don’t fill this out: <input name="bot-field" /></label>
+      <form name="volunteer" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/thanks.html" class="volunteer-form">
+      	<!-- Netlify required hidden field -->
+      	<input type="hidden" name="form-name" value="volunteer" />
+
+      	<!-- Honeypot (spam trap) -->
+      	<p style="display:none;">
+      		<label>
+      			Don’t fill this out:
+      			<input name="bot-field" />
+      		</label>
       	</p>
 
-        <div class="volunteer-grid">
-          <div class="field">
-            <label for="firstName">First name <span aria-hidden="true">*</span></label>
-            <input id="firstName" name="firstName" type="text" autocomplete="given-name" required />
-          </div>
+      	<div class="volunteer-grid">
+      		<div class="field">
+      			<label for="firstName">First name <span aria-hidden="true">*</span></label>
+      			<input id="firstName" name="firstName" type="text" autocomplete="given-name" required/>
+      		</div>
 
-          <div class="field">
-            <label for="lastName">Last name <span aria-hidden="true">*</span></label>
-            <input id="lastName" name="lastName" type="text" autocomplete="family-name" required />
-          </div>
+      		<div class="field">
+      			<label for="lastName">Last name <span aria-hidden="true">*</span></label>
+      <input
+        id="lastName"
+        name="lastName"
+        type="text"
+        autocomplete="family-name"
+        required
+      />
+    </div>
 
-          <div class="field">
-            <label for="email">Email <span aria-hidden="true">*</span></label>
-            <input id="email" name="email" type="email" autocomplete="email" required />
-          </div>
+    <div class="field">
+      <label for="email">Email <span aria-hidden="true">*</span></label>
+      <input
+        id="email"
+        name="email"
+        type="email"
+        autocomplete="email"
+        required
+      />
+    </div>
 
-          <div class="field">
-            <label for="phone">Phone <span aria-hidden="true">*</span></label>
-            <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required />
-            <small class="hint">Example: (215) 555-0123</small>
-          </div>
+    <div class="field">
+      <label for="phone">Phone <span aria-hidden="true">*</span></label>
+      <input
+        id="phone"
+        name="phone"
+        type="tel"
+        autocomplete="tel"
+        inputmode="tel"
+        required
+      />
+      <small class="hint">Example: (215) 555-0123</small>
+    </div>
 
-          <div class="field">
-            <label for="zip">ZIP code <span aria-hidden="true">*</span></label>
-            <input id="zip" name="zip" type="text" inputmode="numeric" autocomplete="postal-code" maxlength="10" required />
-          </div>
-        </div>
+    <div class="field">
+      <label for="zip">ZIP code <span aria-hidden="true">*</span></label>
+      <input
+        id="zip"
+        name="zip"
+        type="text"
+        inputmode="numeric"
+        autocomplete="postal-code"
+        maxlength="10"
+        required
+      />
+    </div>
+  </div>
 
-        <fieldset class="fieldset">
-          <legend>How would you like to help? <span aria-hidden="true">*</span></legend>
+  <fieldset class="fieldset">
+    <legend>How would you like to help? <span aria-hidden="true">*</span></legend>
 
-          <div class="checks">
-            <label class="check">
-              <input type="checkbox" name="volunteerWays" value="Canvassing" />
-              <span>Canvassing (door-to-door)</span>
-            </label>
+    <div class="checks">
+      <label class="check">
+        <input type="checkbox" name="volunteerWays" value="Canvassing (door-to-door)" />
+        <span>Canvassing (door-to-door)</span>
+      </label>
 
-            <label class="check">
-              <input type="checkbox" name="volunteerWays" value="Phone Banking" />
-              <span>Phone calls</span>
-            </label>
+      <label class="check">
+        <input type="checkbox" name="volunteerWays" value="Phone calls" />
+        <span>Phone calls</span>
+      </label>
 
-            <label class="check">
-              <input type="checkbox" name="volunteerWays" value="Text Banking" />
-              <span>Sending text messages</span>
-            </label>
+      <label class="check">
+        <input type="checkbox" name="volunteerWays" value="Sending text messages" />
+        <span>Sending text messages</span>
+      </label>
 
-            <label class="check">
-              <input type="checkbox" name="volunteerWays" value="Social Media" />
-              <span>Social media / content</span>
-            </label>
+      <label class="check">
+        <input type="checkbox" name="volunteerWays" value="Social media / content" />
+        <span>Social media / content</span>
+      </label>
 
-            <label class="check">
-              <input type="checkbox" name="volunteerWays" value="Yard Signs" />
-              <span>Yard signs / visibility</span>
-            </label>
+      <label class="check">
+        <input type="checkbox" name="volunteerWays" value="Yard signs / visibility" />
+        <span>Yard signs / visibility</span>
+      </label>
 
-            <label class="check">
-              <input type="checkbox" name="volunteerWays" value="Other" />
-              <span>Other</span>
-            </label>
-          </div>
+      <label class="check">
+        <input type="checkbox" name="volunteerWays" value="Other" />
+        <span>Other</span>
+      </label>
+    </div>
 
-          <p class="error" id="waysError" role="alert" aria-live="polite"></p>
-        </fieldset>
+    <!-- Optional: capture details when "Other" is chosen -->
+    <div class="field" style="margin-top:12px;">
+      <label for="otherDetails">If other, please share</label>
+      <input id="otherDetails" name="otherDetails" type="text" />
+    </div>
 
-        <fieldset class="fieldset">
-          <legend>Text message opt-in</legend>
+    <p class="error" id="waysError" role="alert" aria-live="polite"></p>
+  </fieldset>
 
-          <label class="check">
-            <input type="checkbox" id="smsOptIn" name="smsOptIn" value="yes" />
-            <span>
-              Yes — I agree to receive campaign text messages (recurring). Msg & data rates may apply.
-              Reply STOP to end, HELP for help.
-            </span>
-          </label>
-        </fieldset>
+  <fieldset class="fieldset">
+    <legend>Text message opt-in</legend>
 
-        <button class="volunteer-btn primary" type="submit">
-          Sign Up to Volunteer
-        </button>
+    <label class="check">
+      <input type="checkbox" id="smsOptIn" name="smsOptIn" value="yes" />
+      <span>
+        Yes — I agree to receive campaign text messages (recurring). Msg &amp; data rates may apply.
+        Reply STOP to end, HELP for help.
+      </span>
+    </label>
+  </fieldset>
 
-        <p class="fineprint">
-          By submitting this form, you agree to be contacted by the campaign.
-        </p>
-      </form>
+  <button class="volunteer-btn primary" type="submit">
+    Sign Up to Volunteer
+  </button>
+
+  <p class="fineprint">
+    By submitting this form, you agree to be contacted by the campaign.
+  </p>
+</form>
+
     </div>
   </section>
 </main>

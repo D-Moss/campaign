@@ -5,7 +5,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Shaun Griffith for Congress (PA-3) — Putting PA First.">
 	<link rel="stylesheet" type="text/css" href="index.css">
-	<link rel="stylesheet" type="text/css" href="volunteer.css">
 	<title>Shaun Griffith for Congress | PA-03</title>
 </head>
 <body>
@@ -23,7 +22,7 @@
 			<div class="nav_right">
 				<ul class="nav_links" role="list" aria-label="Site links">
 					<li><a class="nav_link" href="index.html">Home</a></li>
-					<li><a class="nav_link" href="#about">About</a></li>
+					<li><a class="nav_link" href="about.html">About</a></li>
 					<li><a class="nav_link" href="priorities.html">Priorities</a></li>
 					<li><a class="nav_link" href="testimonials.html">Testimonials</a></li>
 					<li><a class="nav_link" href="volunteer.html">Volunteer</a></li>
@@ -56,7 +55,7 @@
 
 			<nav class="mobile-menu_nav" aria-label="Mobile">
 				<a class="mobile-menu_link" href="index.html">Home</a>
-				<a class="mobile-menu_link" href="#about">About</a>
+				<a class="mobile-menu_link" href="about.html">About</a>
 				<a class="mobile-menu_link" href="priorities.html">Priorities</a>
 				<a class="mobile-menu_link" href="testimonials.html">Testimonials</a>
 				<a class="mobile-menu_link" href="volunteer.html">Volunteer</a>
@@ -76,108 +75,6 @@
 			</div>
 		</div>
 	</aside>
-
-	<main id="main">
-  <section class="volunteer-page" id="volunteer">
-    <div class="volunteer-wrap">
-      <header class="volunteer-header">
-        <h1 class="volunteer-title">Volunteer</h1>
-        <p class="volunteer-subtitle">
-          Help us reach voters across PA-03. Fill this out and we’ll follow up soon.
-        </p>
-      </header>
-
-      <form class="volunteer-form" id="volunteerForm" name="campaign-signup" method="POST" data-netlify="true" netlify-honeypot="bot-field" autocomplete="on">
-        <div class="volunteer-grid">
-          <div class="field">
-            <label for="firstName">First name <span aria-hidden="true">*</span></label>
-            <input id="firstName" name="firstName" type="text" autocomplete="given-name" required />
-          </div>
-
-          <div class="field">
-            <label for="lastName">Last name <span aria-hidden="true">*</span></label>
-            <input id="lastName" name="lastName" type="text" autocomplete="family-name" required />
-          </div>
-
-          <div class="field">
-            <label for="email">Email <span aria-hidden="true">*</span></label>
-            <input id="email" name="email" type="email" autocomplete="email" required />
-          </div>
-
-          <div class="field">
-            <label for="phone">Phone <span aria-hidden="true">*</span></label>
-            <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required />
-            <small class="hint">Example: (215) 555-0123</small>
-          </div>
-
-          <div class="field">
-            <label for="zip">ZIP code <span aria-hidden="true">*</span></label>
-            <input id="zip" name="zip" type="text" inputmode="numeric" autocomplete="postal-code" maxlength="10" required />
-          </div>
-        </div>
-
-        <fieldset class="fieldset">
-          <legend>How would you like to help? <span aria-hidden="true">*</span></legend>
-
-          <div class="checks">
-            <label class="check">
-              <input type="checkbox" name="volunteerWays" value="Canvassing" />
-              <span>Canvassing (door-to-door)</span>
-            </label>
-
-            <label class="check">
-              <input type="checkbox" name="volunteerWays" value="Phone Banking" />
-              <span>Phone calls</span>
-            </label>
-
-            <label class="check">
-              <input type="checkbox" name="volunteerWays" value="Text Banking" />
-              <span>Sending text messages</span>
-            </label>
-
-            <label class="check">
-              <input type="checkbox" name="volunteerWays" value="Social Media" />
-              <span>Social media / content</span>
-            </label>
-
-            <label class="check">
-              <input type="checkbox" name="volunteerWays" value="Yard Signs" />
-              <span>Yard signs / visibility</span>
-            </label>
-
-            <label class="check">
-              <input type="checkbox" name="volunteerWays" value="Other" />
-              <span>Other</span>
-            </label>
-          </div>
-
-          <p class="error" id="waysError" role="alert" aria-live="polite"></p>
-        </fieldset>
-
-        <fieldset class="fieldset">
-          <legend>Text message opt-in</legend>
-
-          <label class="check">
-            <input type="checkbox" id="smsOptIn" name="smsOptIn" value="yes" />
-            <span>
-              Yes — I agree to receive campaign text messages (recurring). Msg & data rates may apply.
-              Reply STOP to end, HELP for help.
-            </span>
-          </label>
-        </fieldset>
-
-        <button class="volunteer-btn primary" type="submit">
-          Sign Up to Volunteer
-        </button>
-
-        <p class="fineprint">
-          By submitting this form, you agree to be contacted by the campaign.
-        </p>
-      </form>
-    </div>
-  </section>
-</main>
-
 
 	<!--FOOTER-->
 	<footer class="site-footer" id="footer">
@@ -207,7 +104,7 @@
 
 				<div class="footer-social">
 					<a href="https://www.instagram.com/shaunforushouse?igsh=b3Y3bHZ5c3IxczBk" target="_blank" aria-label="Instagram">Instagram</a>
-					
+
 					<a href="https://x.com/ShaunforUSHouse" target="_blank" aria-label="Twitter / X">X</a>
 					
 					<a href="https://www.facebook.com/profile.php?id=61586854132589&rdid=eEjKXs8uaeJIMruH&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F19dBGkWLUk%2F#" target="_blank" aria-label="Facebook">Facebook</a>
@@ -224,7 +121,5 @@
 			</p>
 		</div>
 	</footer>
-
-	<script src="volunteer.js"></script>
 </body>
 </html>

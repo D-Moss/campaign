@@ -88,6 +88,13 @@
       </header>
 
       <form class="volunteer-form" id="volunteerForm" name="campaign-signup" method="POST" data-netlify="true" netlify-honeypot="bot-field" autocomplete="on">
+      	<input type="hidden" name="form-name" value="campaign-signup" />
+      	<input type="hidden" name="volunteerWaysSelected" id="volunteerWaysSelected" value="" />
+      	<input type="hidden" name="smsOptInSelected" id="smsOptInSelected" value="No" />
+      	<p hidden>
+      		<label>Don’t fill this out: <input name="bot-field" /></label>
+      	</p>
+
         <div class="volunteer-grid">
           <div class="field">
             <label for="firstName">First name <span aria-hidden="true">*</span></label>

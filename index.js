@@ -152,3 +152,33 @@ if (fightinFor) observer.observe(fightinFor);
     setContinueAmount(defaultBtn.dataset.amount);
   }
 })();
+
+
+
+
+
+const openBtn = document.getElementById('openTestimonialModal');
+  const modal = document.getElementById('testimonialModal');
+  const closeEls = modal.querySelectorAll('[data-close]');
+
+  openBtn.addEventListener('click', () => {
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  });
+
+  closeEls.forEach(el => {
+    el.addEventListener('click', closeModal);
+  });
+
+  function closeModal(){
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  document.addEventListener('keydown', e => {
+    if(e.key === 'Escape' && modal.classList.contains('is-open')){
+      closeModal();
+    }
+  });

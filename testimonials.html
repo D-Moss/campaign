@@ -212,7 +212,10 @@
 				<div class="t-cta-rule" aria-hidden="true"></div>
 
 				<!-- Link this button to your form (Netlify/Google Form/etc.) -->
-				<a class="t-cta-btn" href="#">Get Involved</a>
+				<button class="t-cta-btn" id="openTestimonialModal" type="button">
+					Get Involved
+				</button>
+
 			</div>
 		</section>
 	</main>
@@ -263,6 +266,71 @@
 			</p>
 		</div>
 	</footer>
+
+	<!-- TESTIMONIAL MODAL -->
+<div class="t-modal" id="testimonialModal" aria-hidden="true">
+  <div class="t-modal-overlay" data-close></div>
+
+  <div
+    class="t-modal-dialog"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="testimonialTitle"
+  >
+    <button class="t-modal-close" aria-label="Close form" data-close>
+      ×
+    </button>
+
+    <h2 id="testimonialTitle" class="t-modal-title">
+      Share Your Story
+    </h2>
+
+    <p class="t-modal-subtitle">
+      We’d love to hear why you support this campaign.
+    </p>
+
+    <!-- FORM -->
+    <!-- Works with Netlify now, easy to swap later -->
+    <form
+      name="testimonial"
+      method="POST"
+      data-netlify="true"
+      class="t-form"
+    >
+      <input type="hidden" name="form-name" value="testimonial" />
+
+      <label>
+        Your Name
+        <input type="text" name="name" required />
+      </label>
+
+      <label>
+        Role / Relationship (optional)
+        <input type="text" name="role" placeholder="Volunteer, Teacher, Neighbor…" />
+      </label>
+
+      <label>
+        Your Testimonial
+        <textarea
+          name="testimonial"
+          rows="4"
+          required
+          placeholder="2–3 sentences works great"
+        ></textarea>
+      </label>
+
+      <label class="t-checkbox">
+        <input type="checkbox" name="permission" required />
+        I give permission for this testimonial to be used on the website and social media.
+      </label>
+
+      <button type="submit" class="t-form-btn">
+        Submit Testimonial
+      </button>
+    </form>
+  </div>
+</div>
+
 
 	<script src="index.js"></script>
 </body>

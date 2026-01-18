@@ -1,0 +1,372 @@
+.testimonials-page {
+	padding-bottom: 70px;
+	background: #f8f9fb;
+}
+
+.t-container {
+	margin: 0 auto;
+	width: min(1100px, 92%);
+}
+
+.t-header {
+	padding: 54px 0 18px;
+	text-align: center;
+}
+
+.t-title {
+	margin: 0 0 10px;
+	color: var(--navy);
+	letter-spacing: .3px;
+	font-size: clamp(34px, 4vw, 56px);
+	line-height: 1.05;
+}
+
+.t-subtitle {
+	margin: 0;
+	color: var(--muted);
+	font-size: clamp(15px, 1.4vw, 18px);
+}
+
+/* Featured section spacing */
+.t-featured {
+	padding: 22px 0 40px;
+}
+
+.t-grid-2 {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 22px;
+}
+
+/*Base Card*/
+.t-card {
+	padding: 26px 26px 22px;
+	background-color: var(--white);
+	border-radius: var(--radius);
+	box-shadow: var(--shadow);
+	position: relative;
+}
+
+.t-card--featured {
+	padding-top: 30px;
+	min-height: 170px;
+}
+
+.t-quote-text {
+	margin: 0;
+	color: var(--navy);
+	font-size: 18px;
+	line-height: 1.55;
+}
+
+.t-quote-strong {
+	font-weight: 800;
+}
+
+.t-rule {
+	margin: 18px 0 14px;
+	border: none;
+	border-top: 1px solid rgba(11, 42, 74, .12);
+}
+
+.t-attrib {
+	margin: 0;
+	color: var(--navy);
+	font-size: 15px;
+}
+
+.t-meta {
+	color: var(--ink);
+	font-style: italic;
+	font-size: 14px;
+}
+
+.t-quotes {
+	position: absolute;
+	top: 16px;
+	left: 18px;
+	opacity: .35;
+}
+
+.t-quotes--closing {
+	top: auto;
+	left: auto;
+	bottom: 14px;
+	right: 18px;
+}
+
+.t-quote {
+	color: var(--gold);
+	font-size: 44px;
+	font-weight: 900;
+	line-height: 1;
+}
+
+.t-social {
+	padding: 26px 0 34px;
+	text-align: center;
+}
+
+.t-section-title{
+  margin: 0 0 8px;
+  color: var(--navy);
+  font-size: clamp(24px, 2.4vw, 34px);
+}
+
+.t-section-subtitle{
+  margin: 0 auto 18px;
+  max-width: 680px;
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.t-social-divider{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin: 18px 0 18px;
+}
+
+.t-line{
+  width: min(320px, 30vw);
+  height: 1px;
+  background: rgba(11,42,74,.18);
+}
+
+.t-sparks{
+  width: 26px;
+  height: 10px;
+  position: relative;
+}
+
+.t-sparks::before,
+.t-sparks::after{
+  content:"";
+  position:absolute;
+  width: 10px;
+  height: 3px;
+  background: var(--gold);
+  border-radius: 99px;
+  top: 3px;
+}
+
+.t-sparks::before{ left: 0; transform: rotate(-42deg); }
+.t-sparks::after{ right: 0; transform: rotate(-42deg); }
+
+.t-social-icons{
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.t-icon{
+  width: 58px;
+  height: 58px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: #fff;
+  box-shadow: var(--shadow);
+  text-decoration: none;
+  color: var(--navy);
+  font-weight: 800;
+  font-size: 22px;
+  border: 1px solid rgba(11,42,74,.10);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.t-icon:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(0,0,0,.10);
+}
+
+.t-icon:focus-visible{
+  outline: 3px solid rgba(199,154,44,.45);
+  outline-offset: 3px;
+}
+
+/* Grid section */
+.t-grid{
+  padding: 16px 0 46px;
+}
+
+.t-grid-3{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+/* CTA */
+.t-cta{
+  padding: 18px 0 0;
+}
+
+.t-cta-inner{
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 18px;
+  text-align: center;
+}
+
+.t-cta-title{
+  margin: 0;
+  color: var(--navy);
+  font-size: clamp(26px, 2.6vw, 36px);
+}
+
+.t-cta-rule{
+  height: 2px;
+  background: var(--gold);
+  border-radius: 99px;
+  opacity: .9;
+}
+
+.t-cta-btn{
+  grid-column: 1 / -1;
+  justify-self: center;
+  margin-top: 16px;
+  padding: 14px 36px;
+  border-radius: 12px;
+  background: var(--gold);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: .2px;
+  box-shadow: 0 12px 20px rgba(199,154,44,.22);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.t-cta-btn:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 16px 26px rgba(199,154,44,.28);
+}
+
+.t-cta-btn:focus-visible{
+  outline: 3px solid rgba(11,42,74,.35);
+  outline-offset: 3px;
+}
+
+/* Responsive */
+@media (max-width: 900px){
+  .t-grid-3{ grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 700px){
+  .t-grid-2{ grid-template-columns: 1fr; }
+  .t-grid-3{ grid-template-columns: 1fr; }
+  .t-card{ padding: 22px 18px; }
+  .t-cta-inner{ grid-template-columns: 1fr; }
+  .t-cta-rule{ display:none; }
+}
+
+/* ==========================
+   TESTIMONIAL MODAL
+   ========================== */
+
+.t-modal{
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 9999;
+}
+
+.t-modal.is-open{
+  display: block;
+}
+
+.t-modal-overlay{
+  position: absolute;
+  inset: 0;
+  background: rgba(5,15,30,.65);
+  backdrop-filter: blur(2px);
+}
+
+.t-modal-dialog{
+  position: relative;
+  max-width: 520px;
+  margin: 10vh auto;
+  background: #fff;
+  border-radius: 16px;
+  padding: 28px 26px 30px;
+  box-shadow: 0 30px 60px rgba(0,0,0,.25);
+}
+
+.t-modal-close{
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--navy);
+}
+
+.t-modal-title{
+  margin: 0 0 6px;
+  color: var(--navy);
+  font-size: 30px;
+}
+
+.t-modal-subtitle{
+  margin: 0 0 18px;
+  color: var(--muted);
+}
+
+/* Form */
+.t-form{
+  display: grid;
+  gap: 14px;
+}
+
+.t-form label{
+  display: grid;
+  gap: 6px;
+  font-size: 14px;
+  color: var(--navy);
+  font-weight: 600;
+}
+
+.t-form input,
+.t-form textarea{
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(11,42,74,.25);
+  font-size: 15px;
+  font-family: inherit;
+}
+
+.t-form input:focus,
+.t-form textarea:focus{
+  outline: 3px solid rgba(199,154,44,.35);
+  border-color: var(--gold);
+}
+
+.t-checkbox{
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.t-form-btn{
+  margin-top: 8px;
+  padding: 12px 24px;
+  border-radius: 12px;
+  border: none;
+  background: var(--gold);
+  color: #fff;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(199,154,44,.25);
+}
+
+.t-form-btn:hover{
+  transform: translateY(-1px);
+}

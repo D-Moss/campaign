@@ -287,12 +287,28 @@
 
 .t-modal-dialog{
   position: relative;
-  max-width: 520px;
-  margin: 10vh auto;
+  width: 100%;
+  max-width: 560px;
+  max-height: 80vh;
+  margin: auto;
   background: #fff;
   border-radius: 16px;
   padding: 28px 26px 30px;
   box-shadow: 0 30px 60px rgba(0,0,0,.25);
+  display: flex;
+  flex-direction: column;
+  animation: modalIn .18s ease-out;
+}
+
+@keyframes modalIn{
+  from{
+    opacity: 0;
+    transform: translateY(6px) scale(.98);
+  }
+  to{
+    opacity: 1;
+    transform: none;
+  }
 }
 
 .t-modal-close{
@@ -322,6 +338,8 @@
 .t-form{
   display: grid;
   gap: 14px;
+  overflow-y: auto;
+  padding-right: 6px;
 }
 
 .t-form label{
@@ -339,6 +357,8 @@
   border: 1px solid rgba(11,42,74,.25);
   font-size: 15px;
   font-family: inherit;
+  max-height: 160px;
+  resize: vertical;
 }
 
 .t-form input:focus,

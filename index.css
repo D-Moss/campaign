@@ -872,165 +872,110 @@ body.menu-open .mobile-menu {
 
 /*FOOTER*/
 .site-footer {
-  background: #ffffff;
-  color: #0b2a4a;
-  /*border-top: 3px solid #f5c542; /* gold separator */
-  padding: 3.5rem 1rem 1.5rem;
+	padding: 3.5rem 1rem 1.5rem;
+	background: #ffffff;
+	color: #0b2a4a;
+	/*border-top: 3px solid #f5c542; /* gold separator */
 }
 
 .footer-inner {
-  width: min(1100px, 90%);
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1.2fr 1fr 1fr;
-  gap: 2rem;
-  align-items: start;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: 1.2fr 1fr 1fr;
+	gap: 2rem;
+	align-items: start;
+	width: min(1100px, 90%);
 }
 
 .footer-name {
+	margin: 0 0 0.25rem;
 	color: #0b2a4a;
-  font-size: 1.25rem;
-  font-weight: 800;
-  margin: 0 0 0.25rem;
+	font-size: 1.25rem;
+	font-weight: 800;
 }
 
 .footer-slogan {
-  margin: 0 0 1.25rem;
-  color: rgba(11, 42, 74, 0.8);
-  letter-spacing: 0.02em;
+	margin: 0 0 1.25rem;
+	color: rgba(11, 42, 74, 0.8);
+	letter-spacing: 0.02em;
 }
 
 .footer-donate {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem 1.35rem;
-  border-radius: 12px;
-  background: #0b2a4a;
-  color: #ffffff;
-  font-weight: 900;
-  font-size: 1.05rem;
-  text-decoration: none;
-  border: 2px solid #f5c542;
+	padding: 1rem 1.35rem;
+	background: #0b2a4a;
+	color: #ffffff;
+	text-decoration: none;
+	font-size: 1.05rem;
+	font-weight: 900;
+	border: 2px solid #f5c542;
+	border-radius: 12px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .footer-heading {
-  font-size: 0.95rem;
-  font-weight: 800;
-  margin: 0 0 0.85rem;
-  color: rgba(11, 42, 74, 0.9);
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
+	margin: 0 0 0.85rem;
+	color: rgba(11, 42, 74, 0.9);
+	text-transform: uppercase;
+	font-size: 0.95rem;
+	font-weight: 800;
+	letter-spacing: 0.03em;
 }
 
 .footer-links a,
 .footer-contact a,
 .footer-social a,
 .footer-legal a {
-  display: inline-block;
-  color: rgba(11, 42, 74, 0.80);
-  text-decoration: none;
-  margin-bottom: 0.6rem;
+	margin-bottom: 0.6rem;
+	color: rgba(11, 42, 74, 0.80);
+	text-decoration: none;
+	display: inline-block;
 }
 
 .footer-links a:hover,
 .footer-contact a:hover,
 .footer-social a:hover,
 .footer-legal a:hover {
-  color: #0b2a4a;
-  text-decoration: underline;
-  text-underline-offset: 3px;
+	color: #0b2a4a;
+	text-decoration: underline;
+	text-underline-offset: 3px;
 }
 
 .footer-links a,
 .footer-contact a {
-	display: block;
 	margin-bottom: 0.6rem;
+	display: block;
 }
 
 .footer-social {
-  margin-top: 0.75rem;
-  display: flex;
-  gap: 0.9rem;
-  flex-wrap: wrap;
+	margin-top: 0.75rem;
+	display: flex;
+	gap: 0.9rem;
+	flex-wrap: wrap;
 }
 
 .footer-bottom {
-  width: min(1100px, 90%);
-  margin: 2rem auto 0;
-  padding-top: 1.25rem;
-  border-top: 1px solid rgba(11, 42, 74, 0.15);
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem 1.25rem;
-  justify-content: space-between;
-  align-items: center;
+	margin: 2rem auto 0;
+	padding-top: 1.25rem;
+	border-top: 1px solid rgba(11, 42, 74, 0.15);
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem 1.25rem;
+	justify-content: space-between;
+	align-items: center;
+	width: min(1100px, 90%);
 }
 
 .footer-paidfor,
 .footer-legal {
-  margin: 0;
-  font-size: 0.8rem;
-  color: rgba(11, 42, 74, 0.7);
+	margin: 0;
+	color: rgba(11, 42, 74, 0.7);
+	font-size: 0.8rem;
 }
 
 .footer-privacy {
-  color: rgba(11, 42, 74, 0.85);
-}
-
-/* Mobile */
-@media (max-width: 900px) {
-  .footer-inner {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .footer-social {
-    justify-content: center;
-  }
-
-  .footer-bottom {
-    justify-content: center;
-    text-align: center;
-  }
-}
-
-@media (max-width: 900px) {
-  .volunteer-inner {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .volunteer-actions {
-    justify-content: center;
-  }
-
-  .volunteer-cards {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 900px) {
-  .donate-inner {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .donate-actions {
-    justify-content: center;
-  }
-}
-
-@media (max-width: 900px) {
-	.fightin-for-cards {
-		grid-template-columns: 1fr 1fr;
-	}
-}
-
-@media (max-width: 520px) {
-	.fightin-for-cards {
-		grid-template-columns: 1fr;
-	}
+	color: rgba(11, 42, 74, 0.85);
 }
 
 /* RESPONSIVE: hide desktop links + donate, show toggle */
@@ -1066,7 +1011,56 @@ body.menu-open .mobile-menu {
 		margin-right: auto;
 	}
 }
-/*RESPONSIVENESS*/
+
+@media (max-width: 900px) {
+	.footer-inner {
+		text-align: center;
+		grid-template-columns: 1fr;
+	}
+	.footer-social {
+		justify-content: center;
+	}
+	.footer-bottom {
+		text-align: center;
+		justify-content: center;
+	}
+}
+
+@media (max-width: 900px) {
+	.volunteer-inner {
+		text-align: center;
+		grid-template-columns: 1fr;
+	}
+	.volunteer-actions {
+		justify-content: center;
+	}
+	.volunteer-cards {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media (max-width: 900px) {
+	.donate-inner {
+		text-align: center;
+		grid-template-columns: 1fr;
+	}
+	.donate-actions {
+		justify-content: center;
+	}
+}
+
+@media (max-width: 900px) {
+	.fightin-for-cards {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+@media (max-width: 520px) {
+	.fightin-for-cards {
+		grid-template-columns: 1fr;
+	}
+}
+
 @media (max-width: 900px) {
 	.signup-grid {
 		text-align: center !important;
@@ -1106,27 +1100,23 @@ body.menu-open .mobile-menu {
 }
 
 @media (max-width: 900px) {
-  .action-inner {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-    text-align: center;
-  }
-
-  .action-inner::after {
-    display: none;
-  }
-
-  .action-col--volunteer {
-    padding-top: 2.5rem;
-    border-top: 3px solid var(--gold);
-  }
-
-  .donate-actions,
-  .volunteer-actions {
-    justify-content: center;
-  }
-
-  .volunteer-cards {
-    grid-template-columns: 1fr;
-  }
+	.action-inner {
+		text-align: center;
+		grid-template-columns: 1fr;
+		gap: 2.5rem;
+	}
+	.action-inner::after {
+		display: none;
+	}
+	.action-col--volunteer {
+		padding-top: 2.5rem;
+		border-top: 3px solid var(--gold);
+	}
+	.donate-actions,
+	.volunteer-actions {
+		justify-content: center;
+	}
+	.volunteer-cards {
+		grid-template-columns: 1fr;
+	}
 }

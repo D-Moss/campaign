@@ -385,7 +385,7 @@ body.menu-open .mobile-menu {
 .about-btn {
 	margin-top: 0.75rem;
 	padding: 0.9rem 1.2rem;
-	background: #0b2a4a;         /* navy */
+	background: var(--navy);         /* navy */
 	color: var(--white);
 	text-decoration: none;
 	font-weight: 700;
@@ -554,7 +554,7 @@ body.menu-open .mobile-menu {
 
 .fightin-for-cards {
 	display: grid;
-	grid-template-columns: repeat(4, 1fr);
+	grid-template-columns: repeat(5, 1fr);
 	gap: 1.5rem;
 }
 

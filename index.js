@@ -6,10 +6,11 @@ const overlay = document.querySelector("[data-menu-overlay]");
 const closeBtn = document.querySelector(".mobile-menu_close");
 
 const focusableSelectors =
-	'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])';
+'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])';
 
 let lastFocus = null;
 
+//OPEN MENU
 function openMenu() {
 	lastFocus = document.activeElement;
 

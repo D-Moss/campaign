@@ -1,26 +1,26 @@
 .priorities-hero {
+	padding: 4.5rem 1rem 3.25rem;
 	background: var(--navy);
 	color: var(--white);
-	padding: 4.5rem 1rem 3.25rem;
 	border-bottom: 3px solid rgba(245, 197, 66, 0.65);
 }
 
 .priorities-inner {
-	width: min(1100px, 90%);
 	margin: 0 auto;
 	text-align: center;
+	width: min(1100px, 90%);
 }
 
 .priorities-kicker {
-	display: inline-block;
 	margin: 0 0 .9rem;
 	padding: .35rem .8rem;
-	border: 1px solid rgba(255,255,255,.22);
-	border-radius: 999px;
+	color: rgba(255, 255, 255, .78);
+	text-transform: uppercase;
 	font-size: .85rem;
 	letter-spacing: .10em;
-	text-transform: uppercase;
-	color: rgba(255,255,255,.78);
+	border: 1px solid rgba(255,255,255,.22);
+	border-radius: 999px;
+	display: inline-block;
 }
 
 .priorities-title {

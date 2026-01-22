@@ -101,85 +101,84 @@ const fightinFor = document.querySelector("#fightin-for");
 if (fightinFor) observer.observe(fightinFor);
 
 
-
+//DONATIONS BUTTONS
 (() => {
-  const continueLink = document.getElementById("donateContinue");
-  const customInput = document.getElementById("customAmount");
-  const amountButtons = document.querySelectorAll(".amount-btn");
+	const continueLink = document.getElementById("donateContinue");
+	const customInput = document.getElementById("customAmount");
+	const amountButtons = document.querySelectorAll(".amount-btn");
 
-  if (!continueLink) return;
+	if (!continueLink) return;
 
-  // Base ActBlue URL (must be valid or you'll always get 404)
-  const baseDonateUrl = continueLink.getAttribute("href");
+	// Base ActBlue URL (must be valid or you'll always get 404)
+	const baseDonateUrl = continueLink.getAttribute("href");
 
-  function setContinueAmount(amount) {
-  	const url = new URL(baseDonateUrl);
-  	url.searchParams.set("amount", amount);
-  	continueLink.setAttribute("href", url.toString());
-  }
+	function setContinueAmount(amount) {
+		const url = new URL(baseDonateUrl);
+		url.searchParams.set("amount", amount);
+		continueLink.setAttribute("href", url.toString());
+	}
 
-  // Quick amount buttons
-  amountButtons.forEach(btn => {
-  	btn.addEventListener("click", () => {
-  		const amount = btn.dataset.amount;
-  		const url = new URL(baseDonateUrl);
-  		url.searchParams.set("amount", amount);
-  		window.open(url.toString(), "_blank", "noopener");
-  	});
-  });
+	// Quick amount buttons
+	amountButtons.forEach(btn => {
+		btn.addEventListener("click", () => {
+			const amount = btn.dataset.amount;
+			const url = new URL(baseDonateUrl);
+			url.searchParams.set("amount", amount);
+			window.open(url.toString(), "_blank", "noopener");
+		});
+	});
 
+	// Custom amount typing
+	if (customInput) {
+	    customInput.addEventListener("input", () => {
+	      // clear button highlight when custom is used
+	      amountButtons.forEach(b => b.classList.remove("is-active"));
 
-  // Custom amount typing
-  if (customInput) {
-    customInput.addEventListener("input", () => {
-      // clear button highlight when custom is used
-      amountButtons.forEach(b => b.classList.remove("is-active"));
+	      const raw = (customInput.value || "").trim();
+	      if (!raw) return;
 
-      const raw = (customInput.value || "").trim();
-      if (!raw) return;
+	      const amount = Number(raw);
+	      if (!Number.isFinite(amount) || amount <= 0) return;
 
-      const amount = Number(raw);
-      if (!Number.isFinite(amount) || amount <= 0) return;
+	      setContinueAmount(String(amount));
+	    });
+	  }
 
-      setContinueAmount(String(amount));
-    });
-  }
-
-  // Default: preselect $100 on load
-  const defaultBtn = document.querySelector(".amount-btn.main-donate");
-  if (defaultBtn?.dataset.amount) {
-    amountButtons.forEach(b => b.classList.remove("is-active"));
-    defaultBtn.classList.add("is-active");
-    setContinueAmount(defaultBtn.dataset.amount);
-  }
+	  // Default: preselect $100 on load
+	  const defaultBtn = document.querySelector(".amount-btn.main-donate");
+	  if (defaultBtn?.dataset.amount) {
+	  	amountButtons.forEach(b => b.classList.remove("is-active"));
+	    defaultBtn.classList.add("is-active");
+	    setContinueAmount(defaultBtn.dataset.amount);
+	}
 })();
 
 
 
 
-
+//TESTIMONIAL MODAL DISPLAY
 const openBtn = document.getElementById('openTestimonialModal');
-  const modal = document.getElementById('testimonialModal');
-  const closeEls = modal.querySelectorAll('[data-close]');
+const modal = document.getElementById('testimonialModal');
+const closeEls = modal.querySelectorAll('[data-close]');
 
-  openBtn.addEventListener('click', () => {
-    modal.classList.add('is-open');
-    modal.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
-  });
+openBtn.addEventListener('click', () => {
+	modal.classList.add('is-open');
+	modal.setAttribute('aria-hidden', 'false');
+	document.body.style.overflow = 'hidden';
+});
 
-  closeEls.forEach(el => {
-    el.addEventListener('click', closeModal);
-  });
+closeEls.forEach(el => {
+	el.addEventListener('click', closeModal);
+});
 
-  function closeModal(){
-    modal.classList.remove('is-open');
-    modal.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
-  }
+function closeModal(){
+	modal.classList.remove('is-open');
+	modal.setAttribute('aria-hidden', 'true');
+	document.body.style.overflow = '';
+}
 
-  document.addEventListener('keydown', e => {
-    if(e.key === 'Escape' && modal.classList.contains('is-open')){
-      closeModal();
-    }
-  });
+document.addEventListener('keydown', e => {
+	if(e.key === 'Escape' && modal.classList.contains('is-open')){
+		closeModal();
+	}
+});

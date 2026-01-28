@@ -32,13 +32,6 @@
 	margin: 0;
 }
 
-/*.about img {
-	border-radius: 14px;
-	display: block;
-	width: 100%;
-	height: auto;
-}*/
-
 .editorial {
 	padding: clamp(10px, 2vw, 28px) 16px clamp(40px, 5vw, 80px);
 }

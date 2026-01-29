@@ -1102,3 +1102,38 @@ body.menu-open .mobile-menu {
 		justify-content: center;
 	}
 }
+
+
+
+
+
+
+
+
+
+.nav_link.is-disabled {
+  pointer-events: none;
+  opacity: 0.45;
+  cursor: not-allowed;
+  background: rgba(11, 42, 74, .02);
+  border-color: rgba(11, 42, 74, .12);
+}
+
+/* Optional: remove hover effects */
+.nav_link.is-disabled:hover {
+  transform: none;
+  background: rgba(11, 42, 74, .02);
+}
+
+.mobile-menu_link.is-disabled {
+  pointer-events: none;
+  opacity: 0.45;
+  cursor: not-allowed;
+  background: rgba(11, 42, 74, .02);
+  border-color: rgba(11, 42, 74, .12);
+}
+
+.mobile-menu_link.is-disabled:hover {
+  transform: none;
+  background: rgba(11, 42, 74, .02);
+}

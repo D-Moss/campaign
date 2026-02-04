@@ -1110,7 +1110,7 @@ body.menu-open .mobile-menu {
 
 
 
-
+/*
 .nav_link.is-disabled {
   pointer-events: none;
   opacity: 0.45;
@@ -1119,7 +1119,7 @@ body.menu-open .mobile-menu {
   border-color: rgba(11, 42, 74, .12);
 }
 
-/* Optional: remove hover effects */
+/* Optional: remove hover effects 
 .nav_link.is-disabled:hover {
   transform: none;
   background: rgba(11, 42, 74, .02);

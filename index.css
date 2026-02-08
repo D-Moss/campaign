@@ -407,226 +407,242 @@ body.menu-open .mobile-menu {
 }
 
 /*SIGNUP SECTION*/
-/* =========================
-   SIGNUP SECTION (CLEAN)
-   ========================= */
-
 .signup-section {
-  padding: 5rem 1rem;
-  background: var(--white);
+	padding: 5rem 1rem;
+	background: var(--white);
 }
 
 .signup-inner {
-  margin: 0 auto;
-  max-width: var(--max);
-  width: min(var(--max), 90%);
-  color: var(--navy);
-  text-align: left;
+	margin: 0 auto;
+	color: var(--navy);
+	text-align: left;
+	max-width: var(--max);
+	width: min(var(--max), 90%);
 }
 
-/* 50/50 layout */
+/*50/50 layout*/
 .signup-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: center;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 4rem;
+	align-items: center;
 }
 
 /* LEFT: FORM */
 .signup-left {
-  max-width: none;
+	max-width: none;
 }
 
 .signup-name {
-  margin: 0 0 0.35rem;
-  color: var(--navy);
-  font-size: 1.35rem;
-  font-weight: 900;
+	margin: 0 0 0.35rem;
+	color: var(--navy);
+	font-size: 1.35rem;
+	font-weight: 900;
 }
 
 .signup-kicker {
-  margin: 0 0 2rem;
-  color: rgba(11, 35, 71, 0.70);
-  text-transform: uppercase;
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
+	margin: 0 0 2rem;
+	color: rgba(11, 35, 71, 0.70);
+	text-transform: uppercase;
+	font-size: 1rem;
+	font-weight: 600;
+	letter-spacing: 0.06em;
+}
+
+/* Inputs (uniform + clean) */
+.signup-form-large input {
+	padding: 1.05rem 1.15rem;
+	background: var(--white);
+	color: var(--ink);
+	font-size: 1.05rem;
+	border-radius: 12px;
+	border: 1px solid rgba(11, 35, 71, 0.25);
+	width: 100%;
+}
+
+.signup-form-large input:focus {
+	outline: 2px solid var(--goldBorder);
+	outline-offset: 2px;
 }
 
 #mc_embed_signup_scroll {
-  display: grid;
-  gap: 1.35rem;
+	display: grid;
+	gap: 1.35rem;
 }
 
 #mc_embed_signup_scroll input[type="text"],
 #mc_embed_signup_scroll input[type="email"],
 #mc_embed_signup_scroll input[type="tel"],
 #mc_embed_signup_scroll input[type="number"] {
-  width: 100%;
-  display: block;
-  padding: 1.05rem 1.15rem;
-  background: var(--white);
-  color: var(--ink);
-  font-size: 1.05rem;
-  border-radius: 12px;
-  border: 1px solid rgba(11, 35, 71, 0.25);
+	padding: 1.05rem 1.15rem;
+	background: var(--white);
+	color: var(--ink);
+	font-size: 1.05rem;
+	border-radius: 12px;
+	border: 1px solid rgba(11, 35, 71, 0.25);
+	width: 100%;
+	display: block;
 }
 
 #mc_embed_signup_scroll input:focus {
-  outline: 2px solid var(--goldBorder);
-  outline-offset: 2px;
+	outline: 2px solid var(--goldBorder);
+	outline-offset: 2px;
 }
 
 /* First/Last name row spacing */
 .signup-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.35rem;
-}
-
-/* Inputs (uniform + clean) */
-.signup-form-large input {
-  width: 100%;
-  padding: 1.05rem 1.15rem;
-  background: var(--white);
-  color: var(--ink);
-  font-size: 1.05rem;
-  border-radius: 12px;
-  border: 1px solid rgba(11, 35, 71, 0.25);
-}
-
-.signup-form-large input:focus {
-  outline: 2px solid var(--goldBorder);
-  outline-offset: 2px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 1.35rem;
 }
 
 /* Screen-reader only labels */
 .sr-only {
-  margin: -1px;
-  padding: 0;
-  border: 0;
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
+	margin: -1px;
+	padding: 0;
+	border: 0;
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
 }
 
 /* SMS phone wrapper – styled like an input */
 .smsphone-wrap {
-  display: flex;
-  border: 1px solid rgba(11, 35, 71, 0.25);
-  border-radius: 12px;
-  overflow: hidden;
-  background: var(--white);
+	background: var(--white);
+	border: 1px solid rgba(11, 35, 71, 0.25);
+	border-radius: 12px;
+	display: flex;
+	overflow: hidden;
 }
 
 .smsphone-flag {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 0 10px;
-  position: relative;
-  cursor: pointer;
-  border-right: 1px solid rgba(11, 35, 71, 0.12);
+	padding: 0 10px;
+	border-right: 1px solid rgba(11, 35, 71, 0.12);
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	position: relative;
+	cursor: pointer;
 }
 
-.smsphone { /* your select */
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  cursor: pointer;
-  border: none;
-  background: transparent;
-  font-size: 0;
-  margin: 0;
-  padding: 0;
+.smsphone {
+	margin: 0;
+	padding: 0;
+	background: transparent;
+	font-size: 0;
+	border: none;
+	position: absolute;
+	inset: 0;
+	opacity: 0;
+	cursor: pointer;
 }
 
 /* override your inline padding/border on sms input */
 .smsphone-input {
-  border: none !important;
-  flex: 1;
-  padding: 1.05rem 1.15rem !important;
-  font-size: 1.05rem;
-  background: transparent;
+	padding: 1.05rem 1.15rem !important;
+	background: transparent;
+	font-size: 1.05rem;
+	border: none !important;
+	flex: 1;
 }
 
 .smsphone-input:focus {
-  outline: none;
+	outline: none;
 }
 
 /* Checkbox + legal */
 .signup-checkbox {
-  margin-top: 0.9rem;
-  color: rgba(11, 42, 74, 0.85);
-  font-size: 0.85rem;
-  line-height: 1.35;
+	margin-top: 0.35rem;
+	color: rgba(11, 42, 74, 0.85);
+	font-size: 0.85rem;
+	line-height: 1.35;
+	display: grid;
+	grid-template-columns: 18px 1fr;
+	align-items: start;
+	justify-content: flex-start;
+	column-gap: 0.65rem;
+	width: 100%;
+}
+
+.signup-checkbox label {
+	margin: 0;
+}
+
+.signup-checkbox input[type="checkbox"] {
+	margin: 0.2rem 0 0;
 }
 
 /* Keep this class – used inside the legal text */
 .signup-disclaimer {
-  color: rgba(11, 35, 71, 0.75);
-  font-size: 0.8rem;
-  line-height: 1.35;
+	color: rgba(11, 35, 71, 0.75);
+	font-size: 0.8rem;
+	line-height: 1.35;
+	max-width: none;
 }
 
+.terms,
 .privacy-link {
-  color: var(--navy);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  font-weight: 600;
+	color: var(--navy);
+	text-decoration: underline;
+	text-underline-offset: 3px;
+	font-weight: 600;
 }
 
 /* BUTTON – full width like screenshot */
-.signup-btn-large {
-  margin-top: 0.75rem;
-  width: 100%;
-  display: block;
-  padding: 1.15rem 1.25rem;
+#mc_embed_signup_scroll .signup-btn-large {
+	margin-top: 0.75rem;
+	padding: 1.15rem 1.25rem;
+	background: var(--navy);
+	color: var(--white);
+	font-size: 1.1rem;
+	font-weight: 900;
+	border-radius: 14px;
+	border: 2px solid var(--goldBorder);
+	width: 100%;
+	display: block;
+	cursor: pointer;
+}
 
-  background: var(--navy);
-  color: var(--white);
-  font-size: 1.1rem;
-  font-weight: 900;
+#mc_embed_signup_scroll .signup-btn-large:hover {
+	transform: translateY(-1px);
+}
 
-  border-radius: 14px;
-  border: 2px solid var(--goldBorder);
-  cursor: pointer;
+#mc_embed_signup_scroll .signup-btn-large:focus-visible {
+	outline: 3px solid rgba(243, 196, 59, 0.7);
+	outline-offset: 2px;
 }
 
 /* RIGHT: LOGO */
 .signup-right {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .signup-logo-large {
-  width: 100%;
-  height: auto;
-  max-width: 620px;
+	width: 100%;
+	height: auto;
+	max-width: 620px;
 }
 
 /* Responsive */
 @media (max-width: 900px) {
-  .signup-grid {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .signup-inner {
-    text-align: center;
-  }
-
-  .signup-row {
-    grid-template-columns: 1fr;
-  }
-
-  .signup-logo-large {
-    max-width: 360px;
-  }
+	.signup-inner {
+		text-align: center;
+	}
+	.signup-grid {
+		text-align: center;
+		grid-template-columns: 1fr;
+	}
+	.signup-row {
+		grid-template-columns: 1fr;
+	}
+	.signup-logo-large {
+		max-width: 360px;
+	}
 }
 
 /*POLICY SECTION*/

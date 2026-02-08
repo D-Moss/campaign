@@ -407,135 +407,226 @@ body.menu-open .mobile-menu {
 }
 
 /*SIGNUP SECTION*/
+/* =========================
+   SIGNUP SECTION (CLEAN)
+   ========================= */
+
 .signup-section {
-	padding: 5rem 1rem !important;
-	background-color: var(--white);
+  padding: 5rem 1rem;
+  background: var(--white);
 }
 
 .signup-inner {
-	margin: 0 auto !important;
-	color: var(--navy) !important;
-	text-align: left !important;
-	max-width: var(--max) !important;   /* 1160px from your :root */
-	width: min(var(--max), 90%) !important;
+  margin: 0 auto;
+  max-width: var(--max);
+  width: min(var(--max), 90%);
+  color: var(--navy);
+  text-align: left;
 }
 
-/* 50 / 50 layout */
+/* 50/50 layout */
 .signup-grid {
-	display: grid !important;
-	grid-template-columns: 1fr 1fr !important;
-	gap: 4rem !important;
-	align-items: center !important;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
 }
 
 /* LEFT: FORM */
 .signup-left {
-	max-width: none !important;
+  max-width: none;
 }
 
 .signup-name {
-	margin: 0 0 0.35rem !important;
-	color: var(--navy);
-	font-size: 1.35rem;
-	font-weight: 900;
+  margin: 0 0 0.35rem;
+  color: var(--navy);
+  font-size: 1.35rem;
+  font-weight: 900;
 }
 
 .signup-kicker {
-	margin: 0 0 2rem !important;
-	color: rgba(11, 35, 71, 0.70) !important;
-	text-transform: uppercase;
-	font-size: 1rem;
-	font-weight: 600;
-	letter-spacing: 0.06em;
+  margin: 0 0 2rem;
+  color: rgba(11, 35, 71, 0.70);
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
 }
 
-/* Larger form */
-.signup-form-large {
-	display: grid !important;
-	gap: 1rem !important;
+#mc_embed_signup_scroll {
+  display: grid;
+  gap: 1.35rem;
 }
 
+#mc_embed_signup_scroll input[type="text"],
+#mc_embed_signup_scroll input[type="email"],
+#mc_embed_signup_scroll input[type="tel"],
+#mc_embed_signup_scroll input[type="number"] {
+  width: 100%;
+  display: block;
+  padding: 1.05rem 1.15rem;
+  background: var(--white);
+  color: var(--ink);
+  font-size: 1.05rem;
+  border-radius: 12px;
+  border: 1px solid rgba(11, 35, 71, 0.25);
+}
+
+#mc_embed_signup_scroll input:focus {
+  outline: 2px solid var(--goldBorder);
+  outline-offset: 2px;
+}
+
+/* First/Last name row spacing */
+.signup-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.35rem;
+}
+
+/* Inputs (uniform + clean) */
 .signup-form-large input {
-	padding: 1.05rem 1.15rem !important;
-	background: var(--white); !important;
-	color: var(--ink) !important;
-	font-size: 1.05rem !important;
-	border-radius: 12px !important;
-	border: 1px solid rgba(11, 35, 71, 0.25) !important;
+  width: 100%;
+  padding: 1.05rem 1.15rem;
+  background: var(--white);
+  color: var(--ink);
+  font-size: 1.05rem;
+  border-radius: 12px;
+  border: 1px solid rgba(11, 35, 71, 0.25);
 }
 
 .signup-form-large input:focus {
-	outline: 2px solid var(--goldBorder);
-	outline-offset: 2px;
+  outline: 2px solid var(--goldBorder);
+  outline-offset: 2px;
 }
 
+/* Screen-reader only labels */
 .sr-only {
-	margin: -1px !important;
-	padding: 0 !important;
-	border: 0 !important;
-	position: absolute !important;
-	width: 1px !important;
-	height: 1px !important;
-	overflow: hidden !important;
-	clip: rect(0, 0, 0, 0) !important;
-	white-space: nowrap !important;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
 }
 
-.signup-form-large .signup-row {
-	grid-template-columns: 1fr 1fr !important;
-	gap: 1rem !important;
+/* SMS phone wrapper – styled like an input */
+.smsphone-wrap {
+  display: flex;
+  border: 1px solid rgba(11, 35, 71, 0.25);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--white);
 }
 
-.signup-row {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	gap: 0.9rem;
+.smsphone-flag {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 10px;
+  position: relative;
+  cursor: pointer;
+  border-right: 1px solid rgba(11, 35, 71, 0.12);
 }
 
+.smsphone { /* your select */
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  font-size: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* override your inline padding/border on sms input */
+.smsphone-input {
+  border: none !important;
+  flex: 1;
+  padding: 1.05rem 1.15rem !important;
+  font-size: 1.05rem;
+  background: transparent;
+}
+
+.smsphone-input:focus {
+  outline: none;
+}
+
+/* Checkbox + legal */
 .signup-checkbox {
-	margin-top: 0.75rem;
-	color: rgba(11, 42, 74, 0.85);
-	font-size: 0.85rem;
+  margin-top: 0.9rem;
+  color: rgba(11, 42, 74, 0.85);
+  font-size: 0.85rem;
+  line-height: 1.35;
 }
 
-/* Bigger button */
-.signup-btn-large {
-	margin-top: 1.25rem;
-	padding: 1rem;
-	background: var(--navy);
-	color: var(--white);
-	font-size: 1.05rem;
-	font-weight: 800;
-	border-radius: 12px;
-	border: 2px solid var(--goldBorder);
-	cursor: pointer;
-}
-
-/* Disclaimer */
+/* Keep this class – used inside the legal text */
 .signup-disclaimer {
-	margin-top: 1rem;
-	color: rgba(11, 35, 71, 0.65) !important;
-	font-size: 0.75rem;
+  color: rgba(11, 35, 71, 0.75);
+  font-size: 0.8rem;
+  line-height: 1.35;
 }
 
 .privacy-link {
-	color: var(--navy) !important;
-	text-decoration: underline !important;
-	text-underline-offset: 3px !important;
-	font-weight: 600;
+  color: var(--navy);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 600;
+}
+
+/* BUTTON – full width like screenshot */
+.signup-btn-large {
+  margin-top: 0.75rem;
+  width: 100%;
+  display: block;
+  padding: 1.15rem 1.25rem;
+
+  background: var(--navy);
+  color: var(--white);
+  font-size: 1.1rem;
+  font-weight: 900;
+
+  border-radius: 14px;
+  border: 2px solid var(--goldBorder);
+  cursor: pointer;
 }
 
 /* RIGHT: LOGO */
 .signup-right {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .signup-logo-large {
-	height: auto;
-	width: 100%;
-	max-width: 620px !important;   /* THIS controls how big the logo is */
+  width: 100%;
+  height: auto;
+  max-width: 620px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .signup-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .signup-inner {
+    text-align: center;
+  }
+
+  .signup-row {
+    grid-template-columns: 1fr;
+  }
+
+  .signup-logo-large {
+    max-width: 360px;
+  }
 }
 
 /*POLICY SECTION*/

@@ -5,6 +5,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Shaun Griffith for Congress (PA-3) — Putting PA First.">
 	<link rel="stylesheet" type="text/css" href="index.css">
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-T39XZT548B"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-T39XZT548B');
+	</script>
 	<title>Shaun Griffith for Congress | PA-03</title>
 </head>
 <body>
@@ -25,7 +34,7 @@
 					<li><a class="nav_link" href="index.html">Home</a></li>
 					<li><a class="nav_link" href="about.html">About</a></li>
 					<li><a class="nav_link" href="priorities.html">Priorities</a></li>
-					<li><a class="nav_link is-disabled" href="news.html">Why We Fight</a></li>
+					<li><a class="nav_link" href="news.html">Why We Fight</a></li>
 					<li><a class="nav_link" href="testimonials.html">Testimonials</a></li>
 					<li><a class="nav_link" href="volunteer.html">Volunteer</a></li>
 				</ul>
@@ -59,7 +68,7 @@
 				<a class="mobile-menu_link" href="index.html">Home</a>
 				<a class="mobile-menu_link" href="about.html">About</a>
 				<a class="mobile-menu_link" href="priorities.html">Priorities</a>
-				<a class="mobile-menu_link is-disabled" href="news.html">Why We Fight</a>
+				<a class="mobile-menu_link" href="news.html">Why We Fight</a>
 				<a class="mobile-menu_link" href="testimonials.html">Testimonials</a>
 				<a class="mobile-menu_link" href="volunteer.html">Volunteer</a>
 
@@ -114,53 +123,80 @@
 				<p class="signup-name">Shaun Griffith</p>
 				<p class="signup-kicker">Fight for Philly’s Future</p>
 
-				<form class="signup-form signup-form-large" action="https://griffithforcongress.us10.list-manage.com/subscribe/post?u=c41332c57b10353a3dd7f57e7&amp;id=09b3d806c4&amp;f_id=005ba7e3f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form">
+				<!-- Mailchimp SMS + Email embed START -->
+				<div id="mc_embed_shell" class="signup-form signup-form-large">
+					<div id="mc_embed_signup">
+						<form action="https://griffithforcongress.us10.list-manage.com/subscribe/post?u=c41332c57b10353a3dd7f57e7&amp;id=09b3d806c4&amp;f_id=005ba7e3f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+							<div id="mc_embed_signup_scroll">
 
-					<!-- Mailchimp required: tag for email-updates -->
-					<input type="hidden" name="tags" value="8826888">
+								<!-- Keep your two-up row layout -->
+								<div class="signup-row">
+									<label class="sr-only" for="mce-FNAME">First name</label>
+									<input type="text" name="FNAME" id="mce-FNAME" placeholder="First name" autocomplete="given-name" value="">
 
-					<!-- Bot trap (Mailchimp) -->
-					<div style="position:absolute; left:-5000px;" aria-hidden="true">
-						<input type="text" name="b_c41332c57b10353a3dd7f57e7_09b3d806c4" tabindex="-1" value="">
+									<label class="sr-only" for="mce-LNAME">Last name</label>
+									<input type="text" name="LNAME" id="mce-LNAME" placeholder="Last name" autocomplete="family-name" value="">
+								</div>
+
+								<label class="sr-only" for="mce-EMAIL">Email address</label>
+								<input type="email" name="EMAIL" id="mce-EMAIL" placeholder="Email address" autocomplete="email" required value="">
+
+								<label class="sr-only" for="mce-ZIP">Zip code</label>
+								<input type="text" name="ZIP" id="mce-ZIP" placeholder="Zip code" inputmode="numeric" autocomplete="postal-code" value="">
+
+								<!-- ✅ REQUIRED for SMS opt-in: SMSPHONE field + country selector -->
+								<div class="mc-field-group">
+									<label class="sr-only" for="mce-SMSPHONE">SMS Phone Number</label>
+
+									<div class="smsphone-wrap">
+										<div class="smsphone-flag" id="flag-display-SMSPHONE">
+											<span id="flag-emoji-SMSPHONE" aria-hidden="true">🇺🇸</span>
+
+											<svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none" aria-hidden="true">
+												<path d="M8.0096 11.5649C7.9219 11.5649 7.83506 11.5476 7.75407 11.5139C7.67307 11.4803 7.59951 11.431 7.5376 11.3689L3.54293 7.36289C3.48099 7.30091 3.43186 7.22733 3.39836 7.14636C3.36485 7.06539 3.34763 6.97862 3.34766 6.89099C3.34769 6.80336 3.36498 6.7166 3.39854 6.63565C3.4321 6.55471 3.48128 6.48117 3.54326 6.41923C3.60525 6.35729 3.67882 6.30816 3.75979 6.27466C3.84076 6.24115 3.92754 6.22392 4.01517 6.22395C4.10279 6.22398 4.18956 6.24127 4.2705 6.27484C4.35145 6.3084 4.42499 6.35758 4.48693 6.41956L8.01093 9.95289L11.5443 6.42956C11.6694 6.30464 11.8391 6.23457 12.016 6.23476C12.1928 6.23495 12.3623 6.30538 12.4873 6.43056C12.6122 6.55574 12.6823 6.72542 12.6821 6.90227C12.6819 7.07911 12.6114 7.24864 12.4863 7.37356L8.48026 11.3702C8.35532 11.4949 8.18607 11.5649 8.0096 11.5649Z" fill="#21262A"></path>
+											</svg>
+
+											<select class="smsphone" id="country-select-SMSPHONE" name="SMSPHONE[country]">
+												<option value="US" selected>US+1</option>
+											</select>
+										</div>
+
+										<input class="smsphone-input" type="text" name="SMSPHONE" id="mce-SMSPHONE" placeholder="+1 000 000 0000" autocomplete="tel"value="">
+									</div>
+
+									<!-- ✅ This checkbox is REQUIRED for Mailchimp to mark SMS as subscribed -->
+									<div class="signup-checkbox" style="margin-top:12px;">
+										<input type="checkbox" name="mc-SMSPHONE-ack" id="mc-SMSPHONE-ack" value="true">
+										<label for="mc-SMSPHONE-ack">
+											<span class="signup-disclaimer" id="legal-text-SMSPHONE">Shaun Griffith for US House - By providing your phone number and checking the box, you agree to receive promotional and marketing messages, notifications, and customer service communications from Shaun Griffith for US House. Message and data rates may apply. Consent is not a condition of purchase. Message frequency varies. Text HELP for help. Text STOP to cancel. See <a href="http://eepurl.com/jyDhFY" target="_blank" rel="noopener">Terms</a> and <a href="#" class="privacy-link" target="_blank" rel="noopener">Privacy Policy</a>
+											</span>
+										</label>
+									</div>
+								</div>
+
+								<!-- Hidden tag -->
+								<div hidden><input type="hidden" name="tags" value="8826888"></div>
+
+								<!-- Responses -->
+								<div id="mce-responses" class="clear foot">
+									<div class="response" id="mce-error-response" style="display:none;"></div>
+									<div class="response" id="mce-success-response" style="display:none;"></div>
+								</div>
+
+								<!-- Bot trap -->
+								<div style="position:absolute; left:-5000px;" aria-hidden="true">
+									<input type="text" name="b_c41332c57b10353a3dd7f57e7_09b3d806c4" tabindex="-1" value="">
+								</div>
+
+								<!-- Submit (keep your class) -->
+								<div class="clear foot">
+									<input type="submit" name="subscribe" id="mc-embedded-subscribe" class="signup-btn-large" value="Sign Up">
+								</div>
+							</div>
+						</form>
 					</div>
-
-					<div class="signup-row">
-						<label class="sr-only" for="mce-FNAME">First name</label>
-						<input type="text" id="mce-FNAME" name="FNAME" placeholder="First name" autocomplete="given-name" />
-
-						<label class="sr-only" for="mce-LNAME">Last name</label>
-						<input type="text" id="mce-LNAME" name="LNAME" placeholder="Last name" autocomplete="family-name" />
-					</div>
-
-					<label class="sr-only" for="mce-EMAIL">Email address</label>
-					<input type="email" id="mce-EMAIL" name="EMAIL" placeholder="Email address" autocomplete="email" required />
-
-					<label class="sr-only" for="mce-PHONE">Phone number</label>
-					<input type="tel" id="mce-PHONE" name="PHONE" placeholder="Phone number" autocomplete="tel" />
-
-					<label class="sr-only" for="mce-ZIP">Zip code</label>
-					<input type="text" id="mce-ZIP" name="ZIP" placeholder="Zip code" inputmode="numeric" autocomplete="postal-code" />
-
-					<!-- IMPORTANT: This checkbox will NOT tag sms-opt-in by itself. Keep it if you want, but it’s informational unless we wire it up in Mailchimp later. -->
-					<div class="signup-checkbox">
-						<input type="checkbox" id="smsOptIn" name="smsOptIn" />
-						<label for="smsOptIn">
-							I agree to receive campaign updates via text message from Shaun Griffith for US House. Message and data rates may apply. Reply STOP to opt out.
-						</label>
-					</div>
-
-					<button type="submit" class="signup-btn-large" id="mc-embedded-subscribe">
-						Sign Up
-					</button>
-
-					<!-- Optional: place to show Mailchimp errors/success if you later add AJAX -->
-					<div class="sr-only" aria-live="polite" id="mc-response"></div>
-				</form>
-
-				<p class="signup-disclaimer">
-					Message & data rates may apply. You can unsubscribe at any time.
-					<a href="#" class="privacy-link">Privacy Policy</a>
-				</p>
+				</div>
+				<!-- Mailchimp SMS + Email embed END -->
 			</div>
 
 			<!-- RIGHT: LOGO -->

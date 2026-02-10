@@ -357,6 +357,12 @@ body.menu-open .mobile-menu {
 	}
 }
 
+@media (max-width: 980px) {
+  .nav_links { display: none; }
+  .nav_donate { display: none; }
+  .nav_toggle { display: flex; }
+}
+
 /*ABOUT/BIO*/
 .about-section {
 	padding: 4rem 1rem;

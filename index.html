@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="EN">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -28,8 +28,19 @@
 				<img src="https://i.postimg.cc/7Y83PDDc/PA03_SG.png" alt="Shaun Griffith PA-3 for Congress logo">
 			</a>
 
-			<!-- Right: Desktop Links + Donate + Toggle -->
-			<div class="nav_right">
+			<button class="nav_toggle" type="button" aria-label="Open menu" aria-controls="siteMenu" aria-expanded="false">
+				<span class="burger" aria-hidden="true">
+					<span></span><span></span><span></span>
+				</span>
+			</button>
+
+			<!--ONE menu for both desktop and mobile-->
+			<div class="nav_menu" id="siteMenu" data-menu>
+				<div class="nav_menu-top">
+					<p class="nav_menu-title">Menu</p>
+					<button class="nav_close" type="button" aria-label="Close menu" data-close>X</button>
+				</div>
+
 				<ul class="nav_links" role="list" aria-label="Site links">
 					<li><a class="nav_link" href="index.html">Home</a></li>
 					<li><a class="nav_link" href="about.html">About</a></li>
@@ -39,323 +50,294 @@
 					<li><a class="nav_link" href="volunteer.html">Volunteer</a></li>
 				</ul>
 
-				<a class="nav_donate" href="https://secure.actblue.com/donate/shaun-griffith-1" target="_blank">Donate</a>
+				<a class="nav_donate" href="https://secure.actblue.com/donate/shaun-griffith-1" target="_blank" rel="noopener noreferrer">Donate</a>
 
-				<button class="nav_toggle" type="button" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false">
-					<span class="burger" aria-hidden="true">
-						<span></span><span></span><span></span>
-					</span>
-				</button>
+				<div class="nav_social" aria-label="Connect">
+					<p class="nav_social-label">Connect</p>
+					<div class="nav_social-links">
+						<a href="https://www.instagram.com/shaunforushouse?igsh=b3Y3bHZ5c3IxczBk" target="_blank" aria-label="Instagram" rel="noopener noreferrer">Instagram</a>
+
+						<a href="https://x.com/ShaunforUSHouse" target="_blank" aria-label="Twitter / X" rel="noopener noreferrer">X</a>
+
+						<a href="https://www.facebook.com/profile.php?id=61586493226346" target="_blank" aria-label="Facebook" rel="noopener noreferrer">Facebook</a>
+					</div>
+				</div>
 			</div>
 		</nav>
 	</header>
 
-	<!-- Mobile overlay -->
-	<div class="menu-overlay" data-menu-overlay hidden></div>
+	<div class="menu-overlay" data-overlay hidden></div>
 
-	<!-- Mobile full-screen drawer -->
-	<aside class="mobile-menu" id="mobileMenu" aria-hidden="true">
-		<div class="mobile-menu_inner">
-			<div class="mobile-menu_top">
-				<a class="mobile-menu_logo" href="#home" aria-label="Home">
-					<img src="https://i.postimg.cc/7Y83PDDc/PA03_SG.png" alt="Shaun Griffith PA-3 for Congress logo">
-				</a>
+	<main id="main">
+		<!--ABOUT/BIO-->
+		<section class="about-section" id="about">
+			<div class="about-inner">
 
-				<button class="mobile-menu_close" type="button" aria-label="Close menu">✕</button>
-			</div>
+				<div class="about-media" aria-hidden="true">
+					<div class="about-photo">
+						<img src="https://i.postimg.cc/66PX8WQt/IMG-4709.jpg" alt="Shaun Griffith" loading="lazy">
+					</div>
+				</div>
 
-			<nav class="mobile-menu_nav" aria-label="Mobile">
-				<a class="mobile-menu_link" href="index.html">Home</a>
-				<a class="mobile-menu_link" href="about.html">About</a>
-				<a class="mobile-menu_link" href="priorities.html">Priorities</a>
-				<a class="mobile-menu_link" href="news.html">Why We Fight</a>
-				<a class="mobile-menu_link" href="testimonials.html">Testimonials</a>
-				<a class="mobile-menu_link" href="volunteer.html">Volunteer</a>
+				<div class="about-content">
+					<h2 class="about-title">Meet Shaun</h2>
 
-				<a class="mobile-menu_donate" href="https://secure.actblue.com/donate/shaun-griffith-1">Donate</a>
-			</nav>
+					<p class="about-text">
+						I, Shaun Griffith, am currently running for the Pennsylvania’s 3<sup>rd</sup> Congressional District to represent both the people of the city that I love, Philadelphia, and the people of the country that I love, the United States of America. I moved to Philadelphia from Western Pennsylvania in 2009, and I lived roughly eight years in the Cobbs Creek area of West Philly. Since marrying Rachel Tu, my wife and partner, in July 2017, I have lived in the Tasker Street Homes development near Grays Ferry area of South Philly.
+					</p>
 
-			<div class="mobile-menu_social">
-				<p class="mobile-menu_social-label">Connect</p>
-				<div class="mobile-menu_social-links">
-					<a href="https://www.instagram.com/shaunforushouse?igsh=b3Y3bHZ5c3IxczBk" target="_blank" aria-label="Instagram">Instagram</a>
-					
-					<a href="https://x.com/ShaunforUSHouse" target="_blank" aria-label="Twitter / X">X</a>
-					
-					<a href="https://www.facebook.com/profile.php?id=61586493226346" target="_blank" aria-label="Facebook">Facebook</a>
+					<p class="about-text">
+						As an attorney, I have been admitted to practice law in Pennsylvania since 2003, and I have been admitted to the United States Tax Court since 2005. I worked as a public service employee for the Commonwealth of Pennsylvania for nearly fifteen of the past twenty years; contemporaneously, I have advised individuals and small businesses as the operations manager of USA Tax Service, a boutique tax and accounting firm on Ridge Avenue in Roxborough. Having lived in both West Philly and South Philly and having built a business in Roxborough, I have met many of the residents of Pennsylvania’s 3<sup>rd</sup> Congressional District in several neighborhoods and have come to cherish Philadelphians.
+					</p>
+
+					<a class="about-btn" href="about.html">Learn More</a>
 				</div>
 			</div>
-		</div>
-	</aside>
+		</section>
 
-	<!--ABOUT/BIO-->
-	<section class="about-section" id="about">
-		<div class="about-inner">
+		<!--CAMPAIGN SIGN UP-->
+		<section class="signup-section" id="signup">
+			<div class="signup-inner signup-grid">
 
-			<div class="about-media" aria-hidden="true">
-				<div class="about-photo">
-					<img src="https://i.postimg.cc/66PX8WQt/IMG-4709.jpg" alt="Shaun Griffith" loading="lazy">
-				</div>
-			</div>
+				<!-- LEFT: FORM -->
+				<div class="signup-left">
+					<p class="signup-name">Shaun Griffith</p>
+					<p class="signup-kicker">Fight for Philly’s Future</p>
 
-			<div class="about-content">
-				<h2 class="about-title">Meet Shaun</h2>
+					<!-- Mailchimp SMS + Email embed START -->
+					<div id="mc_embed_shell" class="signup-form signup-form-large">
+						<div id="mc_embed_signup">
+							<form class="validate" id="mc-embedded-subscribe-form" action="https://griffithforcongress.us10.list-manage.com/subscribe/post?u=c41332c57b10353a3dd7f57e7&amp;id=09b3d806c4&amp;f_id=005ba7e3f0" method="post" name="mc-embedded-subscribe-form" target="_blank" novalidate>
+								<div id="mc_embed_signup_scroll">
 
-				<p class="about-text">
-					I, Shaun Griffith, am currently running for the Pennsylvania’s 3<sup>rd</sup> Congressional District to represent both the people of the city that I love, Philadelphia, and the people of the country that I love, the United States of America. I moved to Philadelphia from Western Pennsylvania in 2009, and I lived roughly eight years in the Cobbs Creek area of West Philly. Since marrying Rachel Tu, my wife and partner, in July 2017, I have lived in the Tasker Street Homes development near Grays Ferry area of South Philly.
-				</p>
+									<!-- Keep your two-up row layout -->
+									<div class="signup-row">
+										<label class="sr-only" for="mce-FNAME">First name</label>
+										<input type="text" name="FNAME" id="mce-FNAME" placeholder="First name" autocomplete="given-name" value="">
 
-				<p class="about-text">
-					As an attorney, I have been admitted to practice law in Pennsylvania since 2003, and I have been admitted to the United States Tax Court since 2005. I worked as a public service employee for the Commonwealth of Pennsylvania for nearly fifteen of the past twenty years; contemporaneously, I have advised individuals and small businesses as the operations manager of USA Tax Service, a boutique tax and accounting firm on Ridge Avenue in Roxborough. Having lived in both West Philly and South Philly and having built a business in Roxborough, I have met many of the residents of Pennsylvania’s 3<sup>rd</sup> Congressional District in several neighborhoods and have come to cherish Philadelphians.
-				</p>
+										<label class="sr-only" for="mce-LNAME">Last name</label>
+										<input type="text" name="LNAME" id="mce-LNAME" placeholder="Last name" autocomplete="family-name" value="">
+									</div>
 
-				<a class="about-btn" href="about.html">Learn More</a>
-			</div>
-		</div>
-	</section>
+									<label class="sr-only" for="mce-EMAIL">Email address</label>
+									<input type="email" name="EMAIL" id="mce-EMAIL" placeholder="Email address" autocomplete="email" required value="">
 
-	<!--CAMPAIGN SIGN UP-->
-	<section class="signup-section" id="signup">
-		<div class="signup-inner signup-grid">
+									<label class="sr-only" for="mce-ZIP">Zip code</label>
+									<input type="text" name="ZIP" id="mce-ZIP" placeholder="Zip code" inputmode="numeric" autocomplete="postal-code" value="">
 
-			<!-- LEFT: FORM -->
-			<div class="signup-left">
-				<p class="signup-name">Shaun Griffith</p>
-				<p class="signup-kicker">Fight for Philly’s Future</p>
+									<!-- ✅ REQUIRED for SMS opt-in: SMSPHONE field + country selector -->
+									<div class="mc-field-group">
+										<label class="sr-only" for="mce-SMSPHONE">SMS Phone Number</label>
 
-				<!-- Mailchimp SMS + Email embed START -->
-				<div id="mc_embed_shell" class="signup-form signup-form-large">
-					<div id="mc_embed_signup">
-						<form class="validate" id="mc-embedded-subscribe-form" action="https://griffithforcongress.us10.list-manage.com/subscribe/post?u=c41332c57b10353a3dd7f57e7&amp;id=09b3d806c4&amp;f_id=005ba7e3f0" method="post" name="mc-embedded-subscribe-form" target="_blank" novalidate>
-							<div id="mc_embed_signup_scroll">
+										<div class="smsphone-wrap">
+											<div class="smsphone-flag" id="flag-display-SMSPHONE">
+												<span id="flag-emoji-SMSPHONE" aria-hidden="true">🇺🇸</span>
 
-								<!-- Keep your two-up row layout -->
-								<div class="signup-row">
-									<label class="sr-only" for="mce-FNAME">First name</label>
-									<input type="text" name="FNAME" id="mce-FNAME" placeholder="First name" autocomplete="given-name" value="">
+												<svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none" aria-hidden="true">
+													<path d="M8.0096 11.5649C7.9219 11.5649 7.83506 11.5476 7.75407 11.5139C7.67307 11.4803 7.59951 11.431 7.5376 11.3689L3.54293 7.36289C3.48099 7.30091 3.43186 7.22733 3.39836 7.14636C3.36485 7.06539 3.34763 6.97862 3.34766 6.89099C3.34769 6.80336 3.36498 6.7166 3.39854 6.63565C3.4321 6.55471 3.48128 6.48117 3.54326 6.41923C3.60525 6.35729 3.67882 6.30816 3.75979 6.27466C3.84076 6.24115 3.92754 6.22392 4.01517 6.22395C4.10279 6.22398 4.18956 6.24127 4.2705 6.27484C4.35145 6.3084 4.42499 6.35758 4.48693 6.41956L8.01093 9.95289L11.5443 6.42956C11.6694 6.30464 11.8391 6.23457 12.016 6.23476C12.1928 6.23495 12.3623 6.30538 12.4873 6.43056C12.6122 6.55574 12.6823 6.72542 12.6821 6.90227C12.6819 7.07911 12.6114 7.24864 12.4863 7.37356L8.48026 11.3702C8.35532 11.4949 8.18607 11.5649 8.0096 11.5649Z" fill="#21262A"></path>
+												</svg>
 
-									<label class="sr-only" for="mce-LNAME">Last name</label>
-									<input type="text" name="LNAME" id="mce-LNAME" placeholder="Last name" autocomplete="family-name" value="">
-								</div>
+												<select class="smsphone" id="country-select-SMSPHONE" name="SMSPHONE[country]">
+													<option value="US" selected>US+1</option>
+												</select>
+											</div>
 
-								<label class="sr-only" for="mce-EMAIL">Email address</label>
-								<input type="email" name="EMAIL" id="mce-EMAIL" placeholder="Email address" autocomplete="email" required value="">
-
-								<label class="sr-only" for="mce-ZIP">Zip code</label>
-								<input type="text" name="ZIP" id="mce-ZIP" placeholder="Zip code" inputmode="numeric" autocomplete="postal-code" value="">
-
-								<!-- ✅ REQUIRED for SMS opt-in: SMSPHONE field + country selector -->
-								<div class="mc-field-group">
-									<label class="sr-only" for="mce-SMSPHONE">SMS Phone Number</label>
-
-									<div class="smsphone-wrap">
-										<div class="smsphone-flag" id="flag-display-SMSPHONE">
-											<span id="flag-emoji-SMSPHONE" aria-hidden="true">🇺🇸</span>
-
-											<svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none" aria-hidden="true">
-												<path d="M8.0096 11.5649C7.9219 11.5649 7.83506 11.5476 7.75407 11.5139C7.67307 11.4803 7.59951 11.431 7.5376 11.3689L3.54293 7.36289C3.48099 7.30091 3.43186 7.22733 3.39836 7.14636C3.36485 7.06539 3.34763 6.97862 3.34766 6.89099C3.34769 6.80336 3.36498 6.7166 3.39854 6.63565C3.4321 6.55471 3.48128 6.48117 3.54326 6.41923C3.60525 6.35729 3.67882 6.30816 3.75979 6.27466C3.84076 6.24115 3.92754 6.22392 4.01517 6.22395C4.10279 6.22398 4.18956 6.24127 4.2705 6.27484C4.35145 6.3084 4.42499 6.35758 4.48693 6.41956L8.01093 9.95289L11.5443 6.42956C11.6694 6.30464 11.8391 6.23457 12.016 6.23476C12.1928 6.23495 12.3623 6.30538 12.4873 6.43056C12.6122 6.55574 12.6823 6.72542 12.6821 6.90227C12.6819 7.07911 12.6114 7.24864 12.4863 7.37356L8.48026 11.3702C8.35532 11.4949 8.18607 11.5649 8.0096 11.5649Z" fill="#21262A"></path>
-											</svg>
-
-											<select class="smsphone" id="country-select-SMSPHONE" name="SMSPHONE[country]">
-												<option value="US" selected>US+1</option>
-											</select>
+											<input class="smsphone-input" type="tel" inputmode="numeric" name="SMSPHONE" id="mce-SMSPHONE" placeholder="(215) 555-1212" autocomplete="tel" pattern="[0-9()\\-\\s]{10,}" value="">
 										</div>
 
-										<input class="smsphone-input" type="text" name="SMSPHONE" id="mce-SMSPHONE" placeholder="+1 000 000 0000" autocomplete="tel"value="">
+										<!-- ✅ This checkbox is REQUIRED for Mailchimp to mark SMS as subscribed -->
+										<div class="signup-checkbox">
+											<input type="checkbox" name="mc-SMSPHONE-ack" id="mc-SMSPHONE-ack" value="true">
+											<label for="mc-SMSPHONE-ack">
+												<span class="signup-disclaimer" id="legal-text-SMSPHONE">Shaun Griffith for US House - By providing your phone number and checking the box, you agree to receive promotional and marketing messages, notifications, and customer service communications from Shaun Griffith for US House. Message and data rates may apply. Consent is not a condition of purchase. Message frequency varies. Text HELP for help. Text STOP to cancel. See <a href="http://eepurl.com/jyDhFY" class="terms" target="_blank" rel="noopener">Terms</a> and <a href="#" class="privacy-link" target="_blank" rel="noopener">Privacy Policy</a>
+												</span>
+											</label>
+										</div>
 									</div>
 
-									<!-- ✅ This checkbox is REQUIRED for Mailchimp to mark SMS as subscribed -->
-									<div class="signup-checkbox">
-										<input type="checkbox" name="mc-SMSPHONE-ack" id="mc-SMSPHONE-ack" value="true">
-										<label for="mc-SMSPHONE-ack">
-											<span class="signup-disclaimer" id="legal-text-SMSPHONE">Shaun Griffith for US House - By providing your phone number and checking the box, you agree to receive promotional and marketing messages, notifications, and customer service communications from Shaun Griffith for US House. Message and data rates may apply. Consent is not a condition of purchase. Message frequency varies. Text HELP for help. Text STOP to cancel. See <a href="http://eepurl.com/jyDhFY" class="terms" target="_blank" rel="noopener">Terms</a> and <a href="#" class="privacy-link" target="_blank" rel="noopener">Privacy Policy</a>
-											</span>
-										</label>
+									<!-- Hidden tag -->
+									<div hidden><input type="hidden" name="tags" value="8826888"></div>
+
+									<!-- Responses -->
+									<div id="mce-responses" class="clear foot">
+										<div class="response" id="mce-error-response" style="display:none;"></div>
+										<div class="response" id="mce-success-response" style="display:none;"></div>
+									</div>
+
+									<!-- Bot trap -->
+									<div style="position:absolute; left:-5000px;" aria-hidden="true">
+										<input type="text" name="b_c41332c57b10353a3dd7f57e7_09b3d806c4" tabindex="-1" value="">
+									</div>
+
+									<!-- Submit (keep your class) -->
+									<div class="clear foot">
+										<input type="submit" name="subscribe" id="mc-embedded-subscribe" class="signup-btn-large" value="Sign Up">
 									</div>
 								</div>
-
-								<!-- Hidden tag -->
-								<div hidden><input type="hidden" name="tags" value="8826888"></div>
-
-								<!-- Responses -->
-								<div id="mce-responses" class="clear foot">
-									<div class="response" id="mce-error-response" style="display:none;"></div>
-									<div class="response" id="mce-success-response" style="display:none;"></div>
-								</div>
-
-								<!-- Bot trap -->
-								<div style="position:absolute; left:-5000px;" aria-hidden="true">
-									<input type="text" name="b_c41332c57b10353a3dd7f57e7_09b3d806c4" tabindex="-1" value="">
-								</div>
-
-								<!-- Submit (keep your class) -->
-								<div class="clear foot">
-									<input type="submit" name="subscribe" id="mc-embedded-subscribe" class="signup-btn-large" value="Sign Up">
-								</div>
-							</div>
-						</form>
+							</form>
+						</div>
 					</div>
+					<!-- Mailchimp SMS + Email embed END -->
 				</div>
-				<!-- Mailchimp SMS + Email embed END -->
+
+				<!-- RIGHT: LOGO -->
+				<div class="signup-right">
+					<img src="https://i.postimg.cc/7Y83PDDc/PA03-SG.png" class="signup-logo-large" alt="Shaun Griffith campaign logo" loading="lazy"/>
+				</div>
 			</div>
+		</section>
 
-			<!-- RIGHT: LOGO -->
-			<div class="signup-right">
-				<img src="https://i.postimg.cc/7Y83PDDc/PA03-SG.png" class="signup-logo-large" alt="Shaun Griffith campaign logo" loading="lazy"/>
+		<!--POLICY SECTION-->
+		<section class="fightin-for-section" id="fightin-for">
+			<div class="fightin-for-inner">
+				<h2 class="section-title">What I’m Fightin' For</h2>
+
+				<div class="fightin-for-cards">
+					<article class="policy-card">
+						<h3>Healthcare for All</h3>
+						<ul>
+							<li>Healthcare is a human right — no one should go without care because of cost or employment status.</li>
+							<li>Strengthening and expanding access to coverage must be a national priority.</li>
+							<li>Philadelphia families deserve healthcare systems that put people before profit.</li>
+						</ul>
+						<a href="priorities.html#healthcare" class="policy-btn">Learn More</a>
+					</article>
+
+					<article class="policy-card">
+						<h3>Fair Wages</h3>
+						<ul>
+							<li>Working people deserve pay that keeps up with the cost of living.</li>
+							<li>Raising wages strengthens families, communities, and local economies.</li>
+							<li>Corporations should pay the true cost of labor — not workers or the middle class.</li>
+						</ul>
+						<a href="priorities.html#fair-wages" class="policy-btn">Learn More</a>
+					</article>
+
+					<article class="policy-card">
+						<h3>Civil Liberties</h3>
+						<ul>
+							<li>Democracy depends on due process, accountability, and constitutional rights.</li>
+							<li>No one should be above the law or stripped of their rights without cause.</li>
+							<li>Government power must be checked to protect freedom for everyone.</li>
+						</ul>
+						<a href="priorities.html#civil-liberties" class="policy-btn">Learn More</a>
+					</article>
+
+					<article class="policy-card">
+						<h3>Data Centers</h3>
+						<ul>
+							<li>Americans should be compensated for the use of their personal data.</li>
+							<li>Communities deserve protection from pollution and environmental racism.</li>
+							<li>A temporary moratorium allows time to build responsible guardrails.</li>
+						</ul>
+						<a href="priorities.html#data-centers" class="policy-btn">Learn More</a>
+					</article>
+
+					<article class="policy-card">
+						<h3>Environmental Accountability</h3>
+						<ul>
+							<li>Communities should not pay the price for corporate pollution or unchecked development.</li>
+							<li>Public utilities, clean water, and clean air must be protected.</li>
+							<li>Environmental decisions should prioritize people, health, and fairness.</li>
+						</ul>
+						<a href="priorities.html#environment" class="policy-btn">Learn More</a>
+					</article>
+				</div>
 			</div>
-		</div>
-	</section>
+		</section>
 
-	<!--POLICY SECTION-->
-	<section class="fightin-for-section" id="fightin-for">
-		<div class="fightin-for-inner">
-			<h2 class="section-title">What I’m Fightin' For</h2>
+		<!-- TAKE ACTION (DONATE + VOLUNTEER COMBINED) -->
+		<section class="action-section" id="take-action">
+			<div class="action-inner" aria-label="Donate and volunteer">
 
-			<div class="fightin-for-cards">
-				<article class="policy-card">
-					<h3>Healthcare for All</h3>
-					<ul>
-						<li>Healthcare is a human right — no one should go without care because of cost or employment status.</li>
-						<li>Strengthening and expanding access to coverage must be a national priority.</li>
-						<li>Philadelphia families deserve healthcare systems that put people before profit.</li>
-					</ul>
-					<a href="priorities.html#healthcare" class="policy-btn">Learn More</a>
-				</article>
+				<!-- LEFT: DONATE -->
+				<div class="action-col action-col--donate" id="donate">
+					<div class="donate-copy">
+						<h2 class="donate-title">Support the Fight</h2>
+						<p class="donate-desc">
+							Your contribution helps us reach more voters, organize across Philadelphia, and fight for real change.
+						</p>
 
-				<article class="policy-card">
-					<h3>Fair Wages</h3>
-					<ul>
-						<li>Working people deserve pay that keeps up with the cost of living.</li>
-						<li>Raising wages strengthens families, communities, and local economies.</li>
-						<li>Corporations should pay the true cost of labor — not workers or the middle class.</li>
-					</ul>
-					<a href="priorities.html#fair-wages" class="policy-btn">Learn More</a>
-				</article>
+						<div class="donate-actions">
+							<a class="donate-btn primary" href="https://secure.actblue.com/donate/shaun-griffith-1" target="_blank" rel="noopener">
+								Donate
+							</a>
+							<a class="donate-btn ghost" href="#signup">Get Updates</a>
+						</div>
+						<p class="donate-fineprint">
+							Secure donations. No amount is too small.
+						</p>
+					</div>
 
-				<article class="policy-card">
-					<h3>Civil Liberties</h3>
-					<ul>
-						<li>Democracy depends on due process, accountability, and constitutional rights.</li>
-						<li>No one should be above the law or stripped of their rights without cause.</li>
-						<li>Government power must be checked to protect freedom for everyone.</li>
-					</ul>
-					<a href="priorities.html#civil-liberties" class="policy-btn">Learn More</a>
-				</article>
+					<!-- Quick amounts directly below the Support copy -->
+					<div class="donate-panel">
+						<p class="donate-panel-title">Quick amounts</p>
 
-				<article class="policy-card">
-					<h3>Data Centers</h3>
-					<ul>
-						<li>Americans should be compensated for the use of their personal data.</li>
-						<li>Communities deserve protection from pollution and environmental racism.</li>
-						<li>A temporary moratorium allows time to build responsible guardrails.</li>
-					</ul>
-					<a href="priorities.html#data-centers" class="policy-btn">Learn More</a>
-				</article>
+						<div class="donate-amounts">
+							<button type="button" class="amount-btn" data-amount="25">$25</button>
+							<button type="button" class="amount-btn" data-amount="50">$50</button>
+							<button type="button" class="amount-btn main-donate" data-amount="100">$100</button>
+							<button type="button" class="amount-btn" data-amount="1000">$1000</button>
+							<button type="button" class="amount-btn" data-amount="2500">$2500</button>
+							<button type="button" class="amount-btn" data-amount="3500">$3500</button>
+						</div>
 
-				<article class="policy-card">
-					<h3>Environmental Accountability</h3>
-					<ul>
-						<li>Communities should not pay the price for corporate pollution or unchecked development.</li>
-						<li>Public utilities, clean water, and clean air must be protected.</li>
-						<li>Environmental decisions should prioritize people, health, and fairness.</li>
-					</ul>
-					<a href="priorities.html#environment" class="policy-btn">Learn More</a>
-				</article>
-			</div>
-		</div>
-	</section>
+						<div class="donate-custom">
+							<span class="donate-custom-label">Other</span>
+							<input class="donate-custom-input" id="customAmount" type="number" inputmode="decimal" min="1" step="1" placeholder="$" aria-label="Custom donation amount"/>
+						</div>
 
-	<!-- TAKE ACTION (DONATE + VOLUNTEER COMBINED) -->
-	<section class="action-section" id="take-action">
-		<div class="action-inner" aria-label="Donate and volunteer">
-
-			<!-- LEFT: DONATE -->
-			<div class="action-col action-col--donate" id="donate">
-				<div class="donate-copy">
-					<h2 class="donate-title">Support the Fight</h2>
-					<p class="donate-desc">
-						Your contribution helps us reach more voters, organize across Philadelphia, and fight for real change.
-					</p>
-
-					<div class="donate-actions">
-						<a class="donate-btn primary" href="https://secure.actblue.com/donate/shaun-griffith-1" target="_blank" rel="noopener">
-							Donate
+						<a href="https://secure.actblue.com/donate/shaun-griffith-1" class="donate-btn primary full" id="donateContinue" target="_blank" rel="noopener">
+							Continue
 						</a>
-						<a class="donate-btn ghost" href="#signup">Get Updates</a>
+						<p class="donate-panel-note">You’ll be taken to our secure donation page.</p>
 					</div>
-					<p class="donate-fineprint">
-						Secure donations. No amount is too small.
-					</p>
 				</div>
 
-				<!-- Quick amounts directly below the Support copy -->
-				<div class="donate-panel">
-					<p class="donate-panel-title">Quick amounts</p>
+				<!-- RIGHT: VOLUNTEER -->
+				<div class="action-col action-col--volunteer" id="volunteer">
+					<div class="volunteer-copy">
+						<h2 class="volunteer-title">Get Involved</h2>
+						<p class="volunteer-desc">
+							There are a lot of ways to help — whether you have an hour, a weekend, or want to be part of the team.
+						</p>
 
-					<div class="donate-amounts">
-						<button type="button" class="amount-btn" data-amount="25">$25</button>
-						<button type="button" class="amount-btn" data-amount="50">$50</button>
-						<button type="button" class="amount-btn main-donate" data-amount="100">$100</button>
-						<button type="button" class="amount-btn" data-amount="1000">$1000</button>
-						<button type="button" class="amount-btn" data-amount="2500">$2500</button>
-						<button type="button" class="amount-btn" data-amount="3500">$3500</button>
+						<div class="volunteer-actions">
+							<a class="volunteer-btn primary" href="volunteer.html">Volunteer</a>
+							<a class="volunteer-btn ghost" href="testimonials.html">Spread the Word</a>
+						</div>
+
+						<p class="volunteer-fineprint">
+							We’ll follow up with next steps. Thanks for stepping in.
+						</p>
 					</div>
 
-					<div class="donate-custom">
-						<span class="donate-custom-label">Other</span>
-						<input class="donate-custom-input" id="customAmount" type="number" inputmode="decimal" min="1" step="1" placeholder="$" aria-label="Custom donation amount"/>
+					<!-- 4 boxes directly below the Get Involved copy -->
+					<div class="volunteer-cards" aria-label="Ways to help">
+						<article class="help-card">
+							<h3>Canvass</h3>
+							<p>Knock on doors and talk with neighbors.</p>
+						</article>
+
+						<article class="help-card">
+							<h3>Phone Bank</h3>
+							<p>Call voters from home or with the team. Scripts included.</p>
+						</article>
+
+						<article class="help-card">
+							<h3>Volunteer Skills</h3>
+							<p>Help with admin, design, outreach, or event support.</p>
+						</article>
+
+						<article class="help-card">
+							<h3>Community Events</h3>
+							<p>Show up, represent, and help us build momentum in Philly.</p>
+						</article>
 					</div>
-
-					<a href="https://secure.actblue.com/donate/shaun-griffith-1" class="donate-btn primary full" id="donateContinue" target="_blank" rel="noopener">
-						Continue
-					</a>
-					<p class="donate-panel-note">You’ll be taken to our secure donation page.</p>
-				</div>
-			</div>
-
-			<!-- RIGHT: VOLUNTEER -->
-			<div class="action-col action-col--volunteer" id="volunteer">
-				<div class="volunteer-copy">
-					<h2 class="volunteer-title">Get Involved</h2>
-					<p class="volunteer-desc">
-						There are a lot of ways to help — whether you have an hour, a weekend, or want to be part of the team.
-					</p>
-
-					<div class="volunteer-actions">
-						<a class="volunteer-btn primary" href="volunteer.html">Volunteer</a>
-						<a class="volunteer-btn ghost" href="testimonials.html">Spread the Word</a>
-					</div>
-
-					<p class="volunteer-fineprint">
-						We’ll follow up with next steps. Thanks for stepping in.
-					</p>
-				</div>
-
-				<!-- 4 boxes directly below the Get Involved copy -->
-				<div class="volunteer-cards" aria-label="Ways to help">
-					<article class="help-card">
-						<h3>Canvass</h3>
-						<p>Knock on doors and talk with neighbors.</p>
-					</article>
-
-					<article class="help-card">
-						<h3>Phone Bank</h3>
-						<p>Call voters from home or with the team. Scripts included.</p>
-					</article>
-
-					<article class="help-card">
-						<h3>Volunteer Skills</h3>
-						<p>Help with admin, design, outreach, or event support.</p>
-					</article>
-
-					<article class="help-card">
-						<h3>Community Events</h3>
-						<p>Show up, represent, and help us build momentum in Philly.</p>
-					</article>
 				</div>
 			</div>
-		</div>
-	</section>
+		</section>
+	</main>
 
 	<!--FOOTER-->
 	<footer class="site-footer" id="footer">
@@ -387,7 +369,7 @@
 					<a href="https://www.instagram.com/shaunforushouse?igsh=b3Y3bHZ5c3IxczBk" target="_blank" aria-label="Instagram">Instagram</a>
 
 					<a href="https://x.com/ShaunforUSHouse" target="_blank" aria-label="Twitter / X">X</a>
-					
+
 					<a href="https://www.facebook.com/profile.php?id=61586493226346" target="_blank" aria-label="Facebook">Facebook</a>
 				</div>
 			</div>
@@ -405,6 +387,5 @@
 
 	<script src="analytics.js"></script>
 	<script src="index.js"></script>
-
 </body>
 </html>

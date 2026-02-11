@@ -1,37 +1,46 @@
 const body = document.body;
 
 const toggleBtn = document.querySelector(".nav_toggle");
-const mobileMenu = document.getElementById("mobileMenu");
-const overlay = document.querySelector("[data-menu-overlay]");
-const closeBtn = document.querySelector(".mobile-menu_close");
+const menu = document.querySelector("[data-menu]");
+const overlay = document.querySelector("[data-overlay]");
+const closeBtn = document.querySelector("[data-close]"); // ✅ matches your HTML
 
 const focusableSelectors =
-'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])';
+	'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])';
 
 let lastFocus = null;
 
-//OPEN MENU
+// Helpers
+function isMenuOpen() {
+	return body.classList.contains("menu-open");
+}
+
 function openMenu() {
+	if (!menu || !toggleBtn || !overlay) return;
+
 	lastFocus = document.activeElement;
 
 	body.classList.add("menu-open");
 	overlay.hidden = false;
 
-	mobileMenu.setAttribute("aria-hidden", "false");
+	// Accessibility states
+	menu.setAttribute("aria-hidden", "false");
 	toggleBtn.setAttribute("aria-expanded", "true");
 
-	// Focus first focusable item in menu
-	const firstFocusable = mobileMenu.querySelector(focusableSelectors);
+	// Focus first focusable item inside menu
+	const firstFocusable = menu.querySelector(focusableSelectors);
 	firstFocusable?.focus();
 }
 
 function closeMenu() {
+	if (!menu || !toggleBtn || !overlay) return;
+
 	body.classList.remove("menu-open");
 
-	mobileMenu.setAttribute("aria-hidden", "true");
+	menu.setAttribute("aria-hidden", "true");
 	toggleBtn.setAttribute("aria-expanded", "false");
 
-	// Fade overlay out then hide
+	// Hide overlay after fade
 	setTimeout(() => {
 		overlay.hidden = true;
 	}, 180);
@@ -39,33 +48,37 @@ function closeMenu() {
 	lastFocus?.focus();
 }
 
+// Initial accessibility default
+menu?.setAttribute("aria-hidden", "true");
+
+// Toggle button
 toggleBtn?.addEventListener("click", () => {
-	const isOpen = body.classList.contains("menu-open");
-	isOpen ? closeMenu() : openMenu();
+	isMenuOpen() ? closeMenu() : openMenu();
 });
 
+// Close button (✕)
 closeBtn?.addEventListener("click", closeMenu);
+
+// Click overlay closes
 overlay?.addEventListener("click", closeMenu);
 
-// Close when any link is clicked
-mobileMenu?.addEventListener("click", (e) => {
+// Clicking any link inside menu closes (nice UX)
+menu?.addEventListener("click", (e) => {
 	const link = e.target.closest("a");
 	if (link) closeMenu();
 });
 
 // ESC closes menu
 document.addEventListener("keydown", (e) => {
-	if (e.key === "Escape" && body.classList.contains("menu-open")) {
-		closeMenu();
-	}
+	if (e.key === "Escape" && isMenuOpen()) closeMenu();
 });
 
 // Focus trap inside drawer
 document.addEventListener("keydown", (e) => {
 	if (e.key !== "Tab") return;
-	if (!body.classList.contains("menu-open")) return;
+	if (!isMenuOpen() || !menu) return;
 
-	const focusables = Array.from(mobileMenu.querySelectorAll(focusableSelectors));
+	const focusables = Array.from(menu.querySelectorAll(focusableSelectors));
 	if (!focusables.length) return;
 
 	const first = focusables[0];
@@ -80,105 +93,74 @@ document.addEventListener("keydown", (e) => {
 	}
 });
 
+// Optional: if user resizes to desktop while menu is open, close it
+window.addEventListener("resize", () => {
+	if (window.innerWidth > 860 && isMenuOpen()) closeMenu();
+});
+
+
+
+
+
+// --------------------------------------
+// Mailchimp SMS phone formatting
+// Converts (215) 555-1212 → +12155551212
+// --------------------------------------
+
+const mcForm = document.getElementById("mc-embedded-subscribe-form");
+const mcPhone = document.getElementById("mce-SMSPHONE");
+const mcCountry = document.getElementById("country-select-SMSPHONE");
+
+if (mcForm && mcPhone) {
+	mcForm.addEventListener("submit", () => {
+		const raw = mcPhone.value.trim();
+		if (!raw) return;
+
+		let digits = raw.replace(/\D/g, "");
+
+		// If 11 digits starting with 1, remove leading 1
+		if (digits.length === 11 && digits.startsWith("1")) {
+			digits = digits.slice(1);
+		}
+
+		// If exactly 10 digits → force +1
+		if (digits.length === 10) {
+			mcPhone.value = `+1${digits}`;
+			if (mcCountry) mcCountry.value = "US";
+			return;
+		}
+
+		// If already 11 digits starting with 1 → normalize
+		if (digits.length === 11 && digits.startsWith("1")) {
+			mcPhone.value = `+${digits}`;
+			if (mcCountry) mcCountry.value = "US";
+		}
+		// Otherwise let Mailchimp handle validation
+	});
+}
+
 const cards = document.querySelectorAll(".policy-card");
-const observer = new IntersectionObserver(
-	(entries) => {
-		entries.forEach((entry) => {
-			if (entry.isIntersecting) {
+const fightinFor = document.querySelector("#fightin-for");
+
+if (cards.length && fightinFor) {
+	const observer = new IntersectionObserver(
+		(entries) => {
+			entries.forEach((entry) => {
+				if (!entry.isIntersecting) return;
+
 				cards.forEach((card, index) => {
 					setTimeout(() => {
 						card.classList.add("is-visible");
-					}, index * 250);
+					}, index * 180);
 				});
-				observer.disconnect();
-			}
-		});
-	},
-	{ threshold: 0.3 }
-	);
 
-const fightinFor = document.querySelector("#fightin-for");
-if (fightinFor) observer.observe(fightinFor);
-
-
-//DONATIONS BUTTONS
-(() => {
-	const continueLink = document.getElementById("donateContinue");
-	const customInput = document.getElementById("customAmount");
-	const amountButtons = document.querySelectorAll(".amount-btn");
-
-	if (!continueLink) return;
-
-	// Base ActBlue URL (must be valid or you'll always get 404)
-	const baseDonateUrl = continueLink.getAttribute("href");
-
-	function setContinueAmount(amount) {
-		const url = new URL(baseDonateUrl);
-		url.searchParams.set("amount", amount);
-		continueLink.setAttribute("href", url.toString());
-	}
-
-	// Quick amount buttons
-	amountButtons.forEach(btn => {
-		btn.addEventListener("click", () => {
-			const amount = btn.dataset.amount;
-			const url = new URL(baseDonateUrl);
-			url.searchParams.set("amount", amount);
-			window.open(url.toString(), "_blank", "noopener");
-		});
-	});
-
-	// Custom amount typing
-	if (customInput) {
-	    customInput.addEventListener("input", () => {
-	      // clear button highlight when custom is used
-	      amountButtons.forEach(b => b.classList.remove("is-active"));
-
-	      const raw = (customInput.value || "").trim();
-	      if (!raw) return;
-
-	      const amount = Number(raw);
-	      if (!Number.isFinite(amount) || amount <= 0) return;
-
-	      setContinueAmount(String(amount));
-	    });
-	  }
-
-	  // Default: preselect $100 on load
-	  const defaultBtn = document.querySelector(".amount-btn.main-donate");
-	  if (defaultBtn?.dataset.amount) {
-	  	amountButtons.forEach(b => b.classList.remove("is-active"));
-	    defaultBtn.classList.add("is-active");
-	    setContinueAmount(defaultBtn.dataset.amount);
-	}
-})();
-
-
-
-
-//TESTIMONIAL MODAL DISPLAY
-const openBtn = document.getElementById('openTestimonialModal');
-const modal = document.getElementById('testimonialModal');
-const closeEls = modal.querySelectorAll('[data-close]');
-
-openBtn.addEventListener('click', () => {
-	modal.classList.add('is-open');
-	modal.setAttribute('aria-hidden', 'false');
-	document.body.style.overflow = 'hidden';
-});
-
-closeEls.forEach(el => {
-	el.addEventListener('click', closeModal);
-});
-
-function closeModal(){
-	modal.classList.remove('is-open');
-	modal.setAttribute('aria-hidden', 'true');
-	document.body.style.overflow = '';
+				observer.disconnect(); // only run once
+			});
+		},
+		{ threshold: 0.25 }
+		);
+	observer.observe(fightinFor);
+} else {
+// quick debug if something is missing
+// console.log("Fightin' For: section or cards not found", { cards: cards.length, fightinFor });
 }
-
-document.addEventListener('keydown', e => {
-	if(e.key === 'Escape' && modal.classList.contains('is-open')){
-		closeModal();
-	}
-});

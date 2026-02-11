@@ -18,71 +18,56 @@
 	<title>Why We Fight | Shaun Griffith</title>
 </head>
 <body>
-	<!-- Skip link -->
+	<!--Skip link (accessibility)-->
 	<a class="skip-link" href="#main">Skip to content</a>
 
+	<!--NAVIGATION BAR-->
 	<header class="site-header" id="top">
 		<nav class="nav" aria-label="Primary">
-			<a class="nav_logo" href="index.html" aria-label="Shaun Griffith for Congress - Home">
+			<!-- Left: Logo -->
+			<a class="nav_logo" href="#home" aria-label="Shaun Griffith for Congress - Home">
 				<img src="https://i.postimg.cc/7Y83PDDc/PA03_SG.png" alt="Shaun Griffith PA-3 for Congress logo">
 			</a>
 
-			<div class="nav_right">
+			<button class="nav_toggle" type="button" aria-label="Open menu" aria-controls="siteMenu" aria-expanded="false">
+				<span class="burger" aria-hidden="true">
+					<span></span><span></span><span></span>
+				</span>
+			</button>
+
+			<!--ONE menu for both desktop and mobile-->
+			<div class="nav_menu" id="siteMenu" data-menu>
+				<div class="nav_menu-top">
+					<p class="nav_menu-title">Menu</p>
+					<button class="nav_close" type="button" aria-label="Close menu" data-close>X</button>
+				</div>
+
 				<ul class="nav_links" role="list" aria-label="Site links">
 					<li><a class="nav_link" href="index.html">Home</a></li>
 					<li><a class="nav_link" href="about.html">About</a></li>
 					<li><a class="nav_link" href="priorities.html">Priorities</a></li>
-                    <li><a class="nav_link" href="news.html">Why We Fight</a></li>
+					<li><a class="nav_link" href="news.html">Why We Fight</a></li>
 					<li><a class="nav_link" href="testimonials.html">Testimonials</a></li>
 					<li><a class="nav_link" href="volunteer.html">Volunteer</a></li>
 				</ul>
 
-				<a class="nav_donate" href="https://secure.actblue.com/donate/shaun-griffith-1">Donate</a>
+				<a class="nav_donate" href="https://secure.actblue.com/donate/shaun-griffith-1" target="_blank" rel="noopener noreferrer">Donate</a>
 
-				<button class="nav_toggle" type="button" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false">
-					<span class="burger" aria-hidden="true">
-						<span></span><span></span><span></span>
-					</span>
-				</button>
+				<div class="nav_social" aria-label="Connect">
+					<p class="nav_social-label">Connect</p>
+					<div class="nav_social-links">
+						<a href="https://www.instagram.com/shaunforushouse?igsh=b3Y3bHZ5c3IxczBk" target="_blank" aria-label="Instagram" rel="noopener noreferrer">Instagram</a>
+
+						<a href="https://x.com/ShaunforUSHouse" target="_blank" aria-label="Twitter / X" rel="noopener noreferrer">X</a>
+
+						<a href="https://www.facebook.com/profile.php?id=61586493226346" target="_blank" aria-label="Facebook" rel="noopener noreferrer">Facebook</a>
+					</div>
+				</div>
 			</div>
 		</nav>
 	</header>
 
-	<!-- Mobile overlay + drawer (needed for index.js) -->
-	<div class="menu-overlay" data-menu-overlay hidden></div>
-
-	<aside class="mobile-menu" id="mobileMenu" aria-hidden="true">
-		<div class="mobile-menu_inner">
-			<div class="mobile-menu_top">
-				<a class="mobile-menu_logo" href="index.html" aria-label="Home">
-					<img src="https://i.postimg.cc/7Y83PDDc/PA03_SG.png" alt="Shaun Griffith PA-3 for Congress logo">
-				</a>
-				<button class="mobile-menu_close" type="button" aria-label="Close menu">✕</button>
-			</div>
-
-			<nav class="mobile-menu_nav" aria-label="Mobile">
-				<a class="mobile-menu_link" href="index.html">Home</a>
-				<a class="mobile-menu_link" href="about.html">About</a>
-				<a class="mobile-menu_link" href="priorities.html">Priorities</a>
-                <a class="mobile-menu_link" href="news.html">Why We Fight</a>
-				<a class="mobile-menu_link" href="testimonials.html">Testimonials</a>
-				<a class="mobile-menu_link" href="volunteer.html">Volunteer</a>
-
-				<a class="mobile-menu_donate" href="https://secure.actblue.com/donate/shaun-griffith-1">Donate</a>
-			</nav>
-
-			<div class="mobile-menu_social">
-				<p class="mobile-menu_social-label">Connect</p>
-				<div class="mobile-menu_social-links">
-                    <a href="https://www.instagram.com/shaunforushouse?igsh=b3Y3bHZ5c3IxczBk" target="_blank" aria-label="Instagram">Instagram</a>
-
-                    <a href="https://x.com/ShaunforUSHouse" target="_blank" aria-label="Twitter / X">X</a>
-
-                    <a href="https://www.facebook.com/profile.php?id=61586493226346" target="_blank" aria-label="Facebook">Facebook</a>
-				</div>
-			</div>
-		</div>
-	</aside>
+	<div class="menu-overlay" data-overlay hidden></div>
 
 	<main class="news-page" id="main">
 		<section class="news-wrap" aria-labelledby="newsTitle">

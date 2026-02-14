@@ -619,18 +619,186 @@ body.menu-open .menu-overlay {
 	outline-offset: 2px; 
 } 
 
-/* RIGHT: LOGO */ 
-.signup-right { 
-	display: flex; 
-	justify-content: center; 
-	align-items: center; 
-} 
+/* RIGHT: LOGO AND SOCIAL STRIP */ 
+.signup-right {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 18px;
+}
 
-.signup-logo-large { 
-	width: 100%; 
-	height: auto; 
-	max-width: 620px; 
-} 
+/* Logo sizing */
+.signup-logo-large {
+	width: 100%;
+	height: auto;
+	max-width: 620px;
+}
+
+/* The social section wrapper */
+.signup-right .home-social {
+	padding-top: 4px;
+	width: 100%;
+}
+
+/* Keep the content neatly centered and not “full page wide” */
+.signup-right .home-social .t-container {
+	margin: 0 auto;
+	text-align: center;
+	width: 100%;
+	max-width: 520px;
+}
+
+/* Title + subtitle */
+.signup-right .home-social .t-section-title {
+	margin: 0 0 8px;
+	color: var(--navy);
+	font-size: clamp(20px, 1.8vw, 28px);
+}
+
+.signup-right .home-social .t-section-subtitle {
+	margin: 0 auto 14px;
+	color: rgba(11, 42, 74, 0.82);
+	font-size: 14px;
+	line-height: 1.5;
+	max-width: 46ch;
+}
+
+/* Divider */
+.signup-right .home-social .t-social-divider {
+	margin: 14px 0 16px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 12px;
+}
+
+.signup-right .home-social .t-line {
+	background: rgba(11, 42, 74, 0.18);
+	height: 1px;
+	width: min(180px, 18vw);
+}
+
+.signup-right .home-social .t-sparks {
+	position: relative;
+	width: 26px;
+	height: 10px;
+}
+
+.signup-right .home-social .t-sparks::before,
+.signup-right .home-social .t-sparks::after {
+	background: var(--gold);
+    border-radius: 99px;
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 3px;
+    top: 3px;
+}
+
+.signup-right .home-social .t-sparks::before {
+	left: 0;
+	transform: rotate(-42deg);
+}
+
+.signup-right .home-social .t-sparks::after {
+	right: 0;
+	transform: rotate(-42deg);
+}
+
+/* Icon cards grid */
+.signup-right .home-social .t-social-icons {
+	margin-top: 4px;
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 14px;
+	justify-items: center;
+}
+
+/* Each social card */
+.signup-right .home-social .t-icon {
+	padding: 14px 12px 12px;
+	background: var(--white);
+	color: var(--navy);
+	border-radius: 16px;
+	border: 1px solid rgba(11, 42, 74, 0.10);
+	box-shadow: 0 10px 22px rgba(0,0,0,0.10);
+	display: grid;
+	grid-template-rows: 62px auto;
+	width: 100%;
+	max-width: 160px;
+	min-height: 118px;
+	place-items: center;
+	row-gap: 10px;
+	transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+}
+
+.signup-right .home-social .t-icon:hover {
+	border-color: rgba(199, 154, 44, 0.45);
+	transform: translateY(-2px);
+	box-shadow: 0 14px 28px rgba(0,0,0,0.12);
+}
+
+.signup-right .home-social .t-icon:focus-visible {
+	outline: 3px solid rgba(199, 154, 44, 0.45);
+	outline-offset: 3px;
+}
+
+/* Icon bubble */
+.signup-right .home-social .social-btn__icon {
+	background: rgba(11, 42, 74, 0.04);
+	border-radius: 16px;
+	width: 62px;
+	height: 62px;
+	display: grid;
+	place-items: center;
+}
+
+.signup-right .home-social .social-btn__icon i {
+	font-size: 2.1rem;
+	line-height: 1;
+}
+
+/* Labels */
+.signup-right .home-social .social-btn__label {
+	text-align: center;
+	font-size: 0.98rem;
+	font-weight: 800;
+	line-height: 1.15;
+}
+
+.signup-right .home-social .social-btn__hint {
+	margin-top: 4px;
+	color: rgba(13, 19, 33, 0.82);
+	font-size: 0.82rem;
+	font-weight: 650;
+	display: block;
+}
+
+/*Responsive*/
+@media (max-width: 900px) {
+	.signup-right .home-social .t-container {
+		max-width: 560px;
+	}
+	.signup-right .home-social .t-social-icons {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+}
+
+@media (max-width: 640px) {
+	.signup-right .home-social .t-social-icons {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+@media (max-width: 420px) {
+	.signup-right .home-social .t-social-icons {
+		grid-template-columns: 1fr;
+	}
+	.signup-right .home-social .t-icon {
+		max-width: 220px;
+	}
+}
 
 /* Responsive */ 
 @media (max-width: 900px) { 

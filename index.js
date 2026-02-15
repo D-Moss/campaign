@@ -164,3 +164,30 @@ if (cards.length && fightinFor) {
 // quick debug if something is missing
 // console.log("Fightin' For: section or cards not found", { cards: cards.length, fightinFor });
 }
+
+
+
+const modal = document.getElementById("testimonialModal");
+const openBtns = document.querySelectorAll(".js-cta-btn");
+
+openBtns.forEach((btn) => {
+	btn.addEventListener("click", () => {
+		modal.classList.add("is-open");
+		modal.setAttribute("aria-hidden", "false");
+	});
+});
+
+// Close handlers (if you aren't already doing this)
+modal?.addEventListener("click", (e) => {
+	if (e.target.matches("[data-close]")) {
+		modal.classList.remove("is-open");
+		modal.setAttribute("aria-hidden", "true");
+	}
+});
+
+document.addEventListener("keydown", (e) => {
+	if (e.key === "Escape" && modal?.classList.contains("is-open")) {
+		modal.classList.remove("is-open");
+		modal.setAttribute("aria-hidden", "true");
+	}
+});

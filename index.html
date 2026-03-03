@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="EN">
+<html lang="en">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Shaun Griffith for Congress (PA-3) — Putting PA First.">
-	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" referrerpolicy="no-referrer">
-	<link rel="stylesheet" type="text/css" href="index.css">
+
+	<!--FONT AWESOME-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" referrerpolicy="no-referrer">
+	
 	<!-- Google tag (gtag.js) -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-T39XZT548B"></script>
 	<script>
@@ -15,6 +17,8 @@
 
 		gtag('config', 'G-T39XZT548B');
 	</script>
+
+	<link rel="stylesheet" type="text/css" href="index.css">
 	<title>Shaun Griffith for Congress | PA-03</title>
 </head>
 <body>
@@ -25,7 +29,7 @@
 	<header class="site-header" id="top">
 		<nav class="nav" aria-label="Primary">
 			<!-- Left: Logo -->
-			<a class="nav_logo" href="#home" aria-label="Shaun Griffith for Congress - Home">
+			<a class="nav_logo" href="index.html" aria-label="Shaun Griffith for Congress - Home">
 				<img src="https://i.postimg.cc/7Y83PDDc/PA03_SG.png" alt="Shaun Griffith PA-3 for Congress logo">
 			</a>
 
@@ -35,11 +39,14 @@
 				</span>
 			</button>
 
+			<!-- Overlay (needed for your JS click-to-close) -->
+			<div class="nav_overlay" data-overlay hidden></div>
+
 			<!--ONE menu for both desktop and mobile-->
 			<div class="nav_menu" id="siteMenu" data-menu>
 				<div class="nav_menu-top">
 					<p class="nav_menu-title">Menu</p>
-					<button class="nav_close" type="button" aria-label="Close menu" data-close>X</button>
+					<button class="nav_close" type="button" aria-label="Close menu" data-close>✕</button>
 				</div>
 
 				<ul class="nav_links" role="list" aria-label="Site links">
@@ -425,7 +432,124 @@
 		</div>
 	</footer>
 
-	<script src="analytics.js"></script>
+	<!--REMOVE AFTER MARCH 7-->
+	<!-- Netlify Forms: Hidden form so Netlify detects it -->
+	<form name="sig-event-rsvp" netlify netlify-honeypot="bot-field" hidden>
+		<input name="bot-field">
+		<input type="text" name="event_day">
+		<input type="text" name="first_name">
+		<input type="text" name="contact">
+		<input type="text" name="bringing_guest">
+		<input type="text" name="page">
+		<input type="text" name="ts">
+	</form>
+
+	<!-- Signature Drive Slide-Up Modal -->
+	<div class="sig-overlay" id="sigOverlay" aria-hidden="true">
+		<div class="sig-modal" id="sigModal" role="dialog" aria-modal="true" aria-label="Signature signing information">
+			<button class="sig-close" id="sigClose" type="button" aria-label="Close">✕</button>
+
+			<div class="sig-head">
+				<span class="sig-pill">Ballot Access</span>
+				<h2 class="sig-title">🖊 Help Get Shaun on the Ballot</h2>
+				<p class="sig-sub">
+					Signing isn’t a vote or a donation — it simply helps place Shaun on the ballot so voters have a choice.
+				</p>
+			</div>
+
+			<div class="sig-grid">
+				<!-- Walk-in -->
+				<section class="sig-card sig-card--walkin">
+					<h3 class="sig-h3">Walk-in Office Signing</h3>
+					<p class="sig-line"><strong>Mon–Fri:</strong> 10 AM – 6 PM</p>
+					<p class="sig-line"><strong>Sat:</strong> 10 AM – 2 PM</p>
+					<p class="sig-addr">📍 6234 Ridge Ave</p>
+
+					<button class="sig-btn sig-btn--walkin" id="sigWalkinBtn" type="button">
+						I’ll Stop In This Week
+					</button>
+				</section>
+
+				<!-- Friday -->
+				<section class="sig-card sig-card--event">
+					<div class="sig-tag sig-tag--fri">Friday Event</div>
+					<h3 class="sig-h3">Friday, March 6, 2026 • 3–6 PM</h3>
+					<p class="sig-addr">📍 123 N 9th St</p>
+					<p class="sig-note">Light refreshments available • Bring a friend/friend 💛</p>
+
+					<button class="sig-btn sig-btn--event" type="button" data-rsvp-open="friday">
+						RSVP for Friday
+					</button>
+
+					<form class="sig-rsvp" data-rsvp="friday" novalidate>
+						<div class="sig-rsvp-row">
+							<label class="sig-label">
+								First name (required)
+								<input class="sig-input" name="first_name" autocomplete="given-name" required>
+							</label>
+						</div>
+
+						<div class="sig-rsvp-row sig-rsvp-row--2">
+							<label class="sig-label">
+								Email or phone (optional)
+								<input class="sig-input" name="contact" autocomplete="email">
+							</label>
+
+							<label class="sig-label sig-check">
+								<input type="checkbox" name="bringing_guest" value="Yes">
+								Bringing someone?
+							</label>
+						</div>
+
+						<button class="sig-btn sig-btn--submit" type="submit">
+							Confirm Friday RSVP
+						</button>
+					</form>
+				</section>
+
+				<!-- Saturday -->
+				<section class="sig-card sig-card--event">
+					<div class="sig-tag sig-tag--sat">Saturday Event</div>
+					<h3 class="sig-h3">Saturday, March 7, 2026 • 3–6 PM</h3>
+					<p class="sig-addr">📍 6234 Ridge Ave</p>
+					<p class="sig-note">Snacks & refreshments • Bring a friend/family 💛</p>
+
+					<button class="sig-btn sig-btn--event" type="button" data-rsvp-open="saturday">
+						RSVP for Saturday
+					</button>
+
+					<form class="sig-rsvp" data-rsvp="saturday" novalidate>
+						<div class="sig-rsvp-row">
+							<label class="sig-label">
+								First name (required)
+								<input class="sig-input" name="first_name" autocomplete="given-name" required>
+							</label>
+						</div>
+
+						<div class="sig-rsvp-row sig-rsvp-row--2">
+							<label class="sig-label">
+								Email or phone (optional)
+								<input class="sig-input" name="contact" autocomplete="email">
+							</label>
+
+							<label class="sig-label sig-check">
+								<input type="checkbox" name="bringing_guest" value="Yes">
+								Bringing someone?
+							</label>
+						</div>
+
+						<button class="sig-btn sig-btn--submit" type="submit">
+							Confirm Saturday RSVP
+						</button>
+					</form>
+				</section>
+			</div>
+
+			<div class="sig-toast" id="sigToast" role="status" aria-live="polite"></div>
+		</div>
+	</div>
+	<!--ABOVE THIS LINE SHOULD BE REMOVED-->
+
 	<script src="index.js"></script>
 </body>
 </html>

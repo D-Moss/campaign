@@ -1368,3 +1368,207 @@ body.menu-open .menu-overlay {
 		justify-content: center; 
 	} 
 }
+
+/* ==========================================================
+   SIGNATURE DRIVE SLIDE-UP MODAL
+   REMOVE AFTER MARCH 7 (or modify to Walk-in only)
+   ========================================================== */
+
+.sig-overlay {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 18px;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 1200;
+}
+
+.sig-overlay.is-open {
+  display: flex;
+}
+
+.sig-modal {
+  width: min(1100px, 100%);
+  background: var(--navy);
+  color: var(--white);
+  border: 1px solid rgba(243, 196, 59, 0.35);
+  border-radius: 18px;
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.35);
+  padding: 20px;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+  position: relative;
+}
+
+.sig-overlay.is-open .sig-modal {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Close button */
+.sig-close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  border: 1px solid rgba(243,196,59,.35);
+  background: rgba(255,255,255,.06);
+  color: var(--gold);
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Header */
+.sig-head {
+  padding-right: 60px;
+}
+
+.sig-pill {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: .4px;
+  color: var(--gold);
+  background: rgba(243,196,59,.15);
+  border: 1px solid rgba(243,196,59,.35);
+}
+
+.sig-title {
+  margin: 8px 0 6px;
+  font-size: 1.6rem;
+}
+
+.sig-sub {
+  margin: 0 0 18px;
+  color: rgba(255,255,255,.85);
+  line-height: 1.5;
+}
+
+/* Grid layout */
+.sig-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr 1fr;
+  gap: 16px;
+}
+
+/* Cards */
+.sig-card {
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.sig-card--walkin {
+  background: rgba(243,196,59,.12);
+  border-color: rgba(243,196,59,.45);
+}
+
+.sig-h3 {
+  margin: 0 0 10px;
+  font-size: 1.05rem;
+  font-weight: 800;
+}
+
+.sig-line,
+.sig-addr,
+.sig-note {
+  margin: 0 0 8px;
+  font-size: 0.95rem;
+  color: rgba(255,255,255,.92);
+}
+
+/* Event tags */
+.sig-tag {
+  display: inline-block;
+  margin-bottom: 8px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.sig-tag--fri {
+  background: rgba(255,255,255,.15);
+  color: var(--white);
+}
+
+.sig-tag--sat {
+  background: var(--gold);
+  color: var(--navy);
+}
+
+/* Buttons */
+.sig-btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 14px;
+  border: none;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.sig-btn--walkin {
+  background: var(--gold);
+  color: var(--navy);
+}
+
+.sig-btn--event {
+  background: rgba(255,255,255,.1);
+  color: var(--white);
+  border: 1px solid rgba(243,196,59,.35);
+}
+
+.sig-btn--submit {
+  background: var(--white);
+  color: var(--navy);
+  margin-top: 8px;
+}
+
+/* RSVP section */
+.sig-rsvp {
+  display: none;
+  margin-top: 12px;
+  border-top: 1px solid rgba(255,255,255,.15);
+  padding-top: 12px;
+}
+
+.sig-rsvp.is-open {
+  display: block;
+}
+
+.sig-input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.2);
+  background: rgba(255,255,255,.08);
+  color: var(--white);
+  margin-top: 6px;
+}
+
+.sig-input:focus {
+  outline: 2px solid rgba(243,196,59,.6);
+  outline-offset: 2px;
+}
+
+.sig-toast {
+  margin-top: 14px;
+  font-weight: 800;
+  color: var(--gold);
+  min-height: 24px;
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+  .sig-grid {
+    grid-template-columns: 1fr;
+  }
+}

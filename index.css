@@ -1377,16 +1377,23 @@ body.menu-open .menu-overlay {
 .sig-overlay {
   position: fixed;
   inset: 0;
-  display: none;
+  display: flex;
   align-items: flex-end;
   justify-content: center;
   padding: 18px;
   background: rgba(0, 0, 0, 0.55);
   z-index: 1200;
+
+  opacity: 0;                 /* hidden state */
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
 }
 
 .sig-overlay.is-open {
-  display: flex;
+  opacity: 1;                 /* hidden state */
+  visibility: visible;
+  pointer-events: auto;
 }
 
 .sig-modal {
@@ -1397,9 +1404,9 @@ body.menu-open .menu-overlay {
   border-radius: 18px;
   box-shadow: 0 18px 60px rgba(0, 0, 0, 0.35);
   padding: 20px;
-  transform: translateY(20px);
+  transform: translateY(40px);
   opacity: 0;
-  transition: transform 0.25s ease, opacity 0.25s ease;
+  transition: transform 0.35s ease, opacity 0.35s ease;
   position: relative;
 }
 
@@ -1570,5 +1577,93 @@ body.menu-open .menu-overlay {
 @media (max-width: 1000px) {
   .sig-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* ----------------------------
+   Modal Mobile Improvements
+---------------------------- */
+@media (max-width: 700px) {
+  .sig-overlay {
+    padding: 10px;
+    padding-bottom: max(10px, env(safe-area-inset-bottom));
+    align-items: flex-end;
+  }
+
+  .sig-modal {
+    padding: 14px;
+    border-radius: 16px;
+
+    /* ✅ stronger than 85vh on mobile */
+    max-height: calc(100dvh - 20px);
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+
+    /* gives breathing room above the iPhone home bar */
+    margin-bottom: env(safe-area-inset-bottom);
+  }
+
+  .sig-head { padding-right: 48px; }
+
+  .sig-title { font-size: 1.25rem; line-height: 1.2; }
+
+  .sig-sub { font-size: 0.95rem; margin-bottom: 12px; }
+
+  .sig-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* Walk-in spans full width */
+.sig-card--walkin {
+  grid-column: 1 / -1;
+}
+
+  .sig-card { padding: 14px; }
+
+  .sig-h3 { font-size: 1rem; }
+
+  .sig-line,
+  .sig-addr,
+  .sig-note { font-size: 0.95rem; }
+
+  .sig-btn { padding: 14px; border-radius: 14px; }
+
+  .sig-close {
+    width: 44px;
+    height: 44px;
+    top: 10px;
+    right: 10px;
+  }
+
+  .sig-rsvp { margin-top: 10px; padding-top: 10px; }
+
+  .sig-input { padding: 12px 12px; }
+}
+
+/* ----------------------------
+   Tablet / Small screens (700–1000px)
+---------------------------- */
+@media (min-width: 701px) and (max-width: 1000px) {
+  .sig-modal {
+    max-height: 85vh;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Keep the layout you like: walk-in full width, events side-by-side */
+  .sig-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .sig-card--walkin {
+    grid-column: 1 / -1;
+  }
+
+  /* Tighten header so it doesn't push content offscreen */
+  .sig-sub {
+    margin-bottom: 12px;
   }
 }
